@@ -4,4 +4,5 @@
 int main(void) {
     string s = "globba";
     printf("%s\n", s);
+    int i = 3;
 }
