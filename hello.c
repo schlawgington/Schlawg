@@ -2,6 +2,6 @@
 #include <cs50.h>
 
 int main(void) {
-    string s = "globba glonga shloonga";
+    string s = "globba glonga glingus";
     printf("%s\n", s);
 }
