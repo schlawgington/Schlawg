@@ -1,0 +1,3981 @@
+<!DOCTYPE html>
+<html lang="en"> 
+	<head>
+		<title>
+			Valorant esports Match Schedule | VLR.gg		</title>
+
+					<meta name="description" content="Schedule for upcoming Valorant esports matches">
+				<meta charset="utf-8">
+
+		<meta property="og:title" content="Valorant esports Match Schedule | VLR.gg">
+		<meta property="og:site_name" content="VLR.gg">
+
+					<meta property="og:description" content="Schedule for upcoming Valorant esports matches">
+		
+					
+							<meta property="og:image" content="/img/vlr/favicon.png">
+					
+					<meta name="twitter:card" content="summary">
+		
+					<meta name="twitter:site" content="@vlrdotgg">
+		
+		<meta name="twitter:title" content="Valorant esports Match Schedule | VLR.gg">
+
+					<meta name="twitter:description" content="Schedule for upcoming Valorant esports matches">
+		
+					
+							<meta name="twitter:image" content="https://www.vlr.gg/img/vlr/logo_tw.png">
+							
+		<meta name="theme-color" content="#000">
+		<meta name="msapplication-navbutton-color" content="#000">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,700,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/base/main.css?v=40" type="text/css">
+
+					
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="/css/base/r.css?v=28" type="text/css">
+			
+				
+					
+							<link rel="stylesheet" href="/css/base/pages/matches.css?v=9" type="text/css">
+						
+					
+							<link rel="stylesheet" href="/css/base/pages/r/matches.css?v=3" type="text/css">
+						
+		
+		
+				
+							<link rel="next" href="/matches/?page=2">
+		
+		
+					<link rel="icon" type="image/png" href="/img/vlr/logo_lt.png">
+		
+		
+		
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XG53CMV532"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+							gtag('config', 'G-XG53CMV532');
+					</script>
+
+		<script type="text/javascript">
+window['nitroAds'] = window['nitroAds'] || { createAd: function () { window.nitroAds.queue.push(["createAd", arguments]) }, queue: [] };
+</script>
+<script async src="https://s.nitropay.com/ads-823.js"></script>	</head>
+
+		
+	<body data-ctrl="matches" class="ui-color-light  ">
+
+	
+	<header class="header">
+	<nav class="header-inner">
+		<div class="header-shadow"></div>
+		<div class="header-div mod-first"></div>
+		<a href="/" class="header-logo">
+			
+							<img class="header-logo-logo" src="/img/vlr/logo_header.png" style="height: 36px;">
+					</a>
+
+		<!--
+		<a href="/search" class="header-nav-item mod-search mod-solo">
+			<i class="fa fa-search"></i>
+		</a>
+		<div class="header-div mod-search">
+		</div>
+		-->
+		<div class="header-div mod-search"></div>
+		<div class="header-search">
+			<form action="/search/" method="get">
+				<input type="search" name="q" spellcheck=false autocomplete=off placeholder="Search...">
+			</form>
+		</div>
+
+		<div class="header-div mod-forums"></div>
+		<a href="/threads" class="header-nav-item mod-forums mod-vlr ">
+			Forums
+		</a>
+		
+		<div class="header-div mod-matches"></div>
+		<a href="/matches" class="header-nav-item mod-matches mod-vlr mod-active">
+			Matches
+		</a>
+
+		<div class="header-div mod-events"></div>
+		<a href="/events" class="header-nav-item mod-events mod-vlr ">
+			Events
+		</a>
+
+		<div class="header-div mod-rankings"></div>
+
+		<a href="/rankings" class="header-nav-item mod-rankings mod-vlr ">
+			Rankings
+
+							<span style="background: #da626c; position: absolute; top: 6px; right: 6px; display: inline-block; padding: 2px 3px; border-radius: 2px; line-height: 1; height: auto; font-size: 9px; color: #f8f8f8; font-weight: 400;">
+				 	BETA2
+				</span>
+					</a>
+
+
+					<div class="header-div mod-stats"></div>
+			<a href="/stats" class="header-nav-item mod-stats mod-vlr " style="position: relative;">
+				Stats
+			</a>
+				
+				
+		<div class="header-div"></div>
+
+					<div class="header-nav-item mod-vlr-spacing" style="width: 150px;"></div>
+			<div class="header-div mod-vlr-spacing"></div>
+		
+
+
+		<div class="header-switch js-dark-switch ">
+			<div style="text-align: center;">
+				<div style="margin-bottom: 4px;">
+					<i class="fa fa-moon-o"></i>Night:
+				</div>
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					OFF
+				</span>
+			</div>
+		</div>
+
+		<div class="header-div mod-switch"></div>
+
+		<div class="header-switch js-spoiler-switch mod-active">
+			<div style="text-align: center; ">
+				<div style="margin-bottom: 4px;">
+					<i class="fa fa-exclamation"></i>Spoilers:
+				</div>
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					HIDDEN
+				</span>
+			</div>
+		</div>
+		<div class="header-div mod-switch"></div>
+		
+		
+			<a class="header-nav-item mod-login " href="/login">
+				Log in
+				<i class="fa fa-sign-in"></i>
+			</a>
+
+		
+		<div class="header-nav-item mod-solo mod-dropdown mod-notlogged">
+			<i class="fa fa-bars"></i>
+		</div>
+
+		<div class="header-div mod-last"></div>
+
+
+		<div class="header-menu">
+			<div class="header-menu-scroll">
+
+			<a href="/events" class="header-menu-item mod-mobile mod-events">Events</a>
+			<a href="/rankings" class="header-menu-item mod-mobile mod-rankings">Rankings</a>
+			<a href="/stats" class="header-menu-item mod-mobile mod-stats">Stats</a>
+			
+						
+		
+
+			<div class="header-menu-switch js-dark-switch ">
+				Night:
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					OFF
+				</span>
+			</div>
+
+			<div class="header-menu-switch js-spoiler-switch mod-active">
+				Spoilers:
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					HIDDEN
+				</span>
+			</div>
+	
+
+							<a href="/login" class="header-menu-item"><i class="fa fa-sign-in"></i> Log in</a>
+						</div>
+		</div>
+	</nav>
+</header>
+
+		<div id="float-left-300"></div>
+	<div id="float-left-160"></div>
+			<script type="text/javascript">
+			window['nitroAds'].createAd('float-left-300', {
+			  "refreshLimit": 0,
+			  "refreshTime": 30,
+			  "renderVisibleOnly": false,
+			  "refreshVisibleOnly": true,
+			  "sizes": [
+			    [
+			      "160",
+			      "600"
+			    ],
+			    [
+			      "300",
+			      "250"
+			    ],
+			    [
+			      "300",
+			      "600"
+			    ],
+			    [
+			      "320",
+			      "480"
+			    ],
+			    [
+			      "320",
+			      "50"
+			    ],
+			    [
+			      "336",
+			      "280"
+			    ],
+			    [
+			      "320",
+			      "100"
+			    ]
+			  ],
+			  "report": {
+			    "enabled": true,
+			    "wording": "Report Ad",
+			    "position": "bottom-left"
+			  },
+			  "mediaQuery": '(min-width: 1820px)',
+			});
+		</script>
+		<script type="text/javascript">
+		window['nitroAds'].createAd('float-left-160', {
+		  "refreshLimit": 0,
+		  "refreshTime": 30,
+		  "renderVisibleOnly": false,
+		  "refreshVisibleOnly": true,
+		  "sizes": [
+		    [
+		      "160",
+		      "600"
+		    ]
+		  ],
+		  "report": {
+		    "enabled": true,
+		    "wording": "Report Ad",
+		    "position": "bottom-left"
+		  },
+		  "mediaQuery": '(min-width: 1550px) and (max-width: 1819px)',
+		});
+	</script>
+	
+		<div id="float-right-300"></div>
+	<div id="float-right-160"></div>
+			<script type="text/javascript">
+			window['nitroAds'].createAd('float-right-300', {
+			  "refreshLimit": 0,
+			  "refreshTime": 30,
+			  "renderVisibleOnly": false,
+			  "refreshVisibleOnly": true,
+			  "sizes": [
+			    [
+			      "160",
+			      "600"
+			    ],
+			    [
+			      "300",
+			      "250"
+			    ],
+			    [
+			      "300",
+			      "600"
+			    ],
+			    [
+			      "320",
+			      "480"
+			    ],
+			    [
+			      "320",
+			      "50"
+			    ],
+			    [
+			      "336",
+			      "280"
+			    ],
+			    [
+			      "320",
+			      "100"
+			    ]
+
+			  ],
+			  "report": {
+			    "enabled": true,
+			    "wording": "Report Ad",
+			    "position": "bottom-left"
+			  },
+			  "mediaQuery": '(min-width: 1820px)',
+			});
+		</script>
+		<script type="text/javascript">
+		window['nitroAds'].createAd('float-right-160', {
+		  "refreshLimit": 0,
+		  "refreshTime": 30,
+		  "renderVisibleOnly": false,
+		  "refreshVisibleOnly": true,
+		  "sizes": [
+		    [
+		      "160",
+		      "600"
+		    ]
+		  ],
+		  "report": {
+		    "enabled": true,
+		    "wording": "Report Ad",
+		    "position": "bottom-left"
+		  },
+		  "mediaQuery": '(min-width: 1550px) and (max-width: 1819px)',
+		});
+	</script>
+	
+	
+
+<div id="wrapper">
+	
+	
+			<div class="col-container">
+												<div class="col mod-1">
+
+							
+						<div class="wf-card mod-header mod-full">
+	<div class="wf-nav">
+		<a class="wf-nav-item mod-first mod-active" href="/matches">
+			<div class="wf-nav-item-title">
+				Schedule
+			</div>
+		</a>
+		<a class="wf-nav-item " href="/matches/results">
+			<div class="wf-nav-item-title">
+				Results
+			</div>
+		</a>
+	</div>
+</div>			<div class="wf-label mod-large">
+			Mon, May 5, 2025 
+							<span class="wf-tag" style="vertical-align: -3px; margin-left: 4px;">Today</span>
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/484213/yung-vs-nobles-challengers-league-2025-mena-resilience-gcc-pakistan-iraq-split-1-ubsf" class="wf-module-item match-item mod-color mod-bg-after-green mod-first">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-sa"></span>
+											Yung										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-sa"></span>
+											NOBLES										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">9h 42m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Relegations&ndash;Upper Semifinals							</div>
+							Challengers League 2025 MENA Resilience: GCC-Pakistan-Iraq Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/484214/villianarc-vs-united-gaming-challengers-league-2025-mena-resilience-gcc-pakistan-iraq-split-1-ub" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-un"></span>
+											VillianArc										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kw"></span>
+											United Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">12h 12m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Relegations&ndash;Upper Semifinals							</div>
+							Challengers League 2025 MENA Resilience: GCC-Pakistan-Iraq Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/481610/catnappers-vs-evolution-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Catnappers										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Evolution										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">14h 42m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481615/prosperity-x-vs-teevee-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Prosperity X										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Teevee										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">14h 42m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481616/teddy-tactics-vs-kessoku-band-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Teddy Tactics										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											kessoku band										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">14h 42m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481617/berzerkers-dawn-vs-shrimpmori-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Berzerkers Dawn										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											ShrimpMori										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">14h 42m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481611/ghost-gaming-vs-fisher-fumblers-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Ghost Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Fisher Fumblers										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">17h 12m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481612/wadadaa-vs-3-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Wadadaa										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											:3										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">17h 12m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481613/aussie-and-friends-vs-yfp-x-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Aussie and Friends										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											YFP X										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">17h 12m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/481614/shopify-rebellion-gold-vs-flyquest-red-game-changers-2025-north-america-stage-1-r4" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-ca"></span>
+											Shopify Rebellion Gold										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											FlyQuest RED										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">17h 12m</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 4							</div>
+							Game Changers 2025 North America: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Tue, May 6, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/479492/team-xt-vs-team-rg-game-changers-2025-china-stage-1-elim-c" class="wf-module-item match-item mod-color mod-bg-after-orange mod-first">
+					
+					<div class="match-item-time">
+													5:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team XT										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team RG										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 2h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Elimination (C)							</div>
+							Game Changers 2025 China: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/464791/xgod-vs-motiv-esports-challengers-league-2025-southeast-asia-split-2-ko" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-th"></span>
+											XGOD										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-sg"></span>
+											Motiv Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Knockout Round							</div>
+							Challengers League 2025 Southeast Asia: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/479497/team-unicorn-vs-team-1z-game-changers-2025-china-stage-1-elim-d" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team Unicorn										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team 1Z										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Elimination (D)							</div>
+							Game Changers 2025 China: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/464792/rrq-academy-vs-naos-challengers-league-2025-southeast-asia-split-2-ko" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-id"></span>
+											RRQ Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-ph"></span>
+											NAOS										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 6h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Knockout Round							</div>
+							Challengers League 2025 Southeast Asia: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/484218/tbd-challengers-league-2025-mena-resilience-gcc-pakistan-iraq-split-1-lr2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 9h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Relegations&ndash;Lower Round 2							</div>
+							Challengers League 2025 MENA Resilience: GCC-Pakistan-Iraq Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/484183/orgless-2-0-vs-tbd-challengers-league-2025-mena-resilience-north-africa-and-levant-split-1-winne" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eg"></span>
+											Orgless 2.0										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 12h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Relegations&ndash;Winner's							</div>
+							Challengers League 2025 MENA Resilience: North Africa and Levant Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/481895/shopify-rebellion-black-vs-blue-otter-challengers-league-2025-north-america-ace-stage-2-r6" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													4:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Shopify Rebellion Black										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Blue Otter										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 13h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 6							</div>
+							Challengers League 2025 North America ACE: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63cbac52cf906.png">
+													</div>
+									</a>
+							<a href="/481896/landor-vs-qor-challengers-league-2025-north-america-ace-stage-2-r6" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													4:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Landor										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											QoR										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 13h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 6							</div>
+							Challengers League 2025 North America ACE: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63cbac52cf906.png">
+													</div>
+									</a>
+							<a href="/481897/funhavers-vs-winthrop-university-challengers-league-2025-north-america-ace-stage-2-r6" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Funhavers										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Winthrop University										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1d 16h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 6							</div>
+							Challengers League 2025 North America ACE: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63cbac52cf906.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Wed, May 7, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/479483/dream-chaser-vs-1one-gc-game-changers-2025-china-stage-1-decider-a" class="wf-module-item match-item mod-color mod-bg-after-orange mod-first">
+					
+					<div class="match-item-time">
+													5:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Dream Chaser										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											1one GC										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 2h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Decider (A)							</div>
+							Game Changers 2025 China: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/464793/full-sense-vs-tbd-challengers-league-2025-southeast-asia-split-2-ubsf" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-th"></span>
+											FULL SENSE										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Semifinals							</div>
+							Challengers League 2025 Southeast Asia: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/475206/gen-g-global-academy-vs-drx-academy-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											Gen.G Global Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											DRX Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/479488/team-hyg-vs-team-anc-game-changers-2025-china-stage-1-decider-b" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team HYG										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team ANC										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Decider (B)							</div>
+							Game Changers 2025 China: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/464794/sharper-esport-vs-tbd-challengers-league-2025-southeast-asia-split-2-ubsf" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-th"></span>
+											Sharper Esport										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 6h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Semifinals							</div>
+							Challengers League 2025 Southeast Asia: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/481898/cubert-academy-vs-yfp-challengers-league-2025-north-america-ace-stage-2-r6" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													4:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Cubert Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											YFP										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 13h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 6							</div>
+							Challengers League 2025 North America ACE: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63cbac52cf906.png">
+													</div>
+									</a>
+							<a href="/481899/burger-boyz-vs-tsm-challengers-league-2025-north-america-ace-stage-2-r6" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Burger Boyz										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											TSM										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">2d 16h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Swiss Stage&ndash;Round 6							</div>
+							Challengers League 2025 North America ACE: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63cbac52cf906.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Thu, May 8, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/475207/fearx-vs-fn-pocheon-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green mod-first">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											FEARX										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											FN Pocheon										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 1h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/479493/team-vtg-vs-tbd-game-changers-2025-china-stage-1-decider-c" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Team VTG										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 2h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Decider (C)							</div>
+							Game Changers 2025 China: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/464797/tbd-challengers-league-2025-southeast-asia-split-2-lr1" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Round 1							</div>
+							Challengers League 2025 Southeast Asia: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/475208/slt-seongnam-vs-dplus-esports-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											SLT Seongnam										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											Dplus Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/479498/101-outlaws-vs-tbd-game-changers-2025-china-stage-1-decider-d" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tw"></span>
+											101 Outlaws										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 4h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Decider (D)							</div>
+							Game Changers 2025 China: Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/604be13d01964.png">
+													</div>
+									</a>
+							<a href="/464795/tbd-challengers-league-2025-southeast-asia-split-2-ubf" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 6h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Final							</div>
+							Challengers League 2025 Southeast Asia: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/482503/bbl-esports-vs-natus-vincere-champions-tour-2025-emea-stage-1-playoffs-ubr1" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											BBL Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Natus Vincere										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 8h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Round 1							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+							<a href="/482504/fnatic-vs-fut-esports-champions-tour-2025-emea-stage-1-playoffs-ubr1" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													2:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											FNATIC										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											FUT Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 11h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Round 1							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Fri, May 9, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/475209/gen-g-global-academy-vs-fn-pocheon-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green mod-first">
+					
+					<div class="match-item-time">
+													1:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											Gen.G Global Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											FN Pocheon										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 22h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/475210/sherpa-vs-drx-academy-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													1:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											SHERPA										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											DRX Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">3d 22h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/473841/gen-g-vs-rex-regum-qeon-champions-tour-2025-pacific-stage-1-ubf" class="wf-module-item match-item mod-color mod-bg-after-blue ">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											Gen.G										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-id"></span>
+											Rex Regum Qeon										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">4d 1h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Final							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+							<a href="/475211/fearx-vs-slt-seongnam-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											FEARX										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											SLT Seongnam										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">4d 1h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/475212/t1-academy-vs-dplus-esports-wdg-challengers-league-2025-korea-stage-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											T1 Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											Dplus Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">4d 1h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 3							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/473842/drx-vs-paper-rex-champions-tour-2025-pacific-stage-1-lr3" class="wf-module-item match-item mod-color mod-bg-after-blue ">
+					
+					<div class="match-item-time">
+													6:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											DRX										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-sg"></span>
+											Paper Rex										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">4d 3h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Round 3							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+							<a href="/482505/karmine-corp-vs-tbd-champions-tour-2025-emea-stage-1-playoffs-lr1" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Karmine Corp										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">4d 8h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Round 1							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+							<a href="/482506/team-vitality-vs-tbd-champions-tour-2025-emea-stage-1-playoffs-lr1" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													2:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Team Vitality										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">4d 11h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Round 1							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Sat, May 10, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/473843/tbd-champions-tour-2025-pacific-stage-1-lbf" class="wf-module-item match-item mod-color mod-bg-after-blue mod-first">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">5d 1h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Final							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+							<a href="/482507/team-heretics-vs-tbd-champions-tour-2025-emea-stage-1-playoffs-ubsf" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Team Heretics										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">5d 8h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Semifinals							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+							<a href="/482508/team-liquid-vs-tbd-champions-tour-2025-emea-stage-1-playoffs-ubsf" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													2:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Team Liquid										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">5d 11h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Upper Semifinals							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Sun, May 11, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/473844/tbd-champions-tour-2025-pacific-stage-1-gf" class="wf-module-item match-item mod-color mod-bg-after-blue mod-first">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">6d 1h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Grand Final							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+							<a href="/482510/tbd-champions-tour-2025-emea-stage-1-playoffs-lr2" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">6d 8h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Round 2							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+							<a href="/482509/tbd-champions-tour-2025-emea-stage-1-playoffs-lr2" class="wf-module-item match-item mod-color mod-bg-after-yellow ">
+					
+					<div class="match-item-time">
+													2:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+										<div class="text-of">
+											<span class="flag mod-un"></span>
+											TBD
+										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming">
+										&ndash;
+									</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">6d 11h</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Playoffs&ndash;Lower Round 2							</div>
+							Champions Tour 2025: EMEA Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65ab59620a233.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Mon, May 12, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/475213/slt-seongnam-vs-sherpa-wdg-challengers-league-2025-korea-stage-2-w4" class="wf-module-item match-item mod-color mod-bg-after-green mod-first">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											SLT Seongnam										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											SHERPA										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 4							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+							<a href="/475214/fn-pocheon-vs-drx-academy-wdg-challengers-league-2025-korea-stage-2-w4" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													7:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											FN Pocheon										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											DRX Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score mod-upcoming js-spoiler ">
+																					&ndash;
+																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml">
+								<div class="ml-status">Upcoming</div>
+								<div class="ml-eta">1w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+													Pending
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+						
+													Pending
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Round Robin&ndash;Week 4							</div>
+							WDG Challengers League 2025 Korea: Stage 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/6009f963577f4.png">
+													</div>
+									</a>
+					</div>
+	<div class="action-container">
+	<div>
+			</div>
+	<div class="action-container-pages">
+		
+														<span class="btn mod-page mod-active">1</span>
+															<a href="/matches/?page=2" class="btn mod-page">2</a>
+					
+				
+			</div>
+</div>					</div>
+																																																																	</div>
+			
+		
+			
+	<div class="media-vw">
+	</div>
+</div>
+<div>
+	<script>
+		window['nitroAds'].createAd('anchor-mobile-bottom', {
+		  "refreshLimit": 0,
+		  "refreshTime": 30,
+		  "format": "anchor",
+		  "anchor": "bottom",
+		  "anchorPersistClose": true,
+		  "report": {
+		    "enabled": true,
+		    "icon": true,
+		    "wording": "Report Ad",
+		    "position": "top-right"
+		  },
+		  "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+		});
+	</script>
+	<div id="anchor-mobile-bottom"></div>
+
+
+	<script>
+	window['nitroAds'].createAd('nitro-video', {
+	  "refreshTime": 30,
+	  "format": "floating",
+	  "report": {
+	    "enabled": true,
+	    "icon": true,
+	    "wording": "Report Ad",
+	    "position": "top-left"
+	  },
+	  "mediaQuery": "(min-width: 1840px)"
+	});
+	</script>
+
+<div class="footer">
+	<div class="footer-inner">
+		<div class="header-div mod-first"></div>
+
+			<a href="mailto:community@VLR.gg" class="contact">Contact</a>
+			<div class="sdot">&bull;</div>
+			<a href="/privacy" class="privacy">Privacy</a>
+			<div class="sdot">&bull;</div>
+			<a href="/terms" class="privacy">Terms</a>
+			<div class="sdot">&bull;</div>
+
+							<a href="/user/view/desktop">
+					Switch to Desktop
+				</a>
+			
+	
+			<div class="find-txt">
+				Find us on:
+			</div>
+			
+							<a href="https://twitter.com/vlrdotgg" target="_blank" class="social mod-twitter">
+					<i class="fa fa-twitter mod-twitter"></i>Twitter
+				</a>
+						
+							<a href="https://discord.com/invite/VLR" target="_blank" class="social mod-discord">
+					<img src="/img/icons/social/discord.svg" class="mod-discord">Discord
+				</a>
+						
+			
+			
+		<div class="header-div mod-last"></div>
+	</div>	
+</div>	<script src="/js/common/vendor/jquery.min.js"></script>
+<script src="/js/common/main.min.js?v=74"></script>
+
+	<a id="bottom"></a>
+</body>
+</html>

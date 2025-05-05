@@ -1,0 +1,4573 @@
+<!DOCTYPE html>
+<html lang="en"> 
+	<head>
+		<title>
+			Valorant esports Match Results | VLR.gg		</title>
+
+					<meta name="description" content="Match results and VOD archive for Valorant esports matches">
+				<meta charset="utf-8">
+
+		<meta property="og:title" content="Valorant esports Match Results | VLR.gg">
+		<meta property="og:site_name" content="VLR.gg">
+
+					<meta property="og:description" content="Match results and VOD archive for Valorant esports matches">
+		
+					
+							<meta property="og:image" content="/img/vlr/favicon.png">
+					
+					<meta name="twitter:card" content="summary">
+		
+					<meta name="twitter:site" content="@vlrdotgg">
+		
+		<meta name="twitter:title" content="Valorant esports Match Results | VLR.gg">
+
+					<meta name="twitter:description" content="Match results and VOD archive for Valorant esports matches">
+		
+					
+							<meta name="twitter:image" content="https://www.vlr.gg/img/vlr/logo_tw.png">
+							
+		<meta name="theme-color" content="#000">
+		<meta name="msapplication-navbutton-color" content="#000">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,700,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/base/main.css?v=40" type="text/css">
+
+					
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="/css/base/r.css?v=28" type="text/css">
+			
+				
+					
+							<link rel="stylesheet" href="/css/base/pages/matches.css?v=9" type="text/css">
+						
+					
+							<link rel="stylesheet" href="/css/base/pages/r/matches.css?v=3" type="text/css">
+						
+		
+		
+				
+					<link rel="prev" href="/matches/results/?page=8">
+							<link rel="next" href="/matches/results/?page=10">
+		
+		
+					<link rel="icon" type="image/png" href="/img/vlr/logo_lt.png">
+		
+		
+		
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XG53CMV532"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+							gtag('config', 'G-XG53CMV532');
+					</script>
+
+		<script type="text/javascript">
+window['nitroAds'] = window['nitroAds'] || { createAd: function () { window.nitroAds.queue.push(["createAd", arguments]) }, queue: [] };
+</script>
+<script async src="https://s.nitropay.com/ads-823.js"></script>	</head>
+
+		
+	<body data-ctrl="matches" class="ui-color-light  ">
+
+	
+	<header class="header">
+	<nav class="header-inner">
+		<div class="header-shadow"></div>
+		<div class="header-div mod-first"></div>
+		<a href="/" class="header-logo">
+			
+							<img class="header-logo-logo" src="/img/vlr/logo_header.png" style="height: 36px;">
+					</a>
+
+		<!--
+		<a href="/search" class="header-nav-item mod-search mod-solo">
+			<i class="fa fa-search"></i>
+		</a>
+		<div class="header-div mod-search">
+		</div>
+		-->
+		<div class="header-div mod-search"></div>
+		<div class="header-search">
+			<form action="/search/" method="get">
+				<input type="search" name="q" spellcheck=false autocomplete=off placeholder="Search...">
+			</form>
+		</div>
+
+		<div class="header-div mod-forums"></div>
+		<a href="/threads" class="header-nav-item mod-forums mod-vlr ">
+			Forums
+		</a>
+		
+		<div class="header-div mod-matches"></div>
+		<a href="/matches" class="header-nav-item mod-matches mod-vlr mod-active">
+			Matches
+		</a>
+
+		<div class="header-div mod-events"></div>
+		<a href="/events" class="header-nav-item mod-events mod-vlr ">
+			Events
+		</a>
+
+		<div class="header-div mod-rankings"></div>
+
+		<a href="/rankings" class="header-nav-item mod-rankings mod-vlr ">
+			Rankings
+
+							<span style="background: #da626c; position: absolute; top: 6px; right: 6px; display: inline-block; padding: 2px 3px; border-radius: 2px; line-height: 1; height: auto; font-size: 9px; color: #f8f8f8; font-weight: 400;">
+				 	BETA2
+				</span>
+					</a>
+
+
+					<div class="header-div mod-stats"></div>
+			<a href="/stats" class="header-nav-item mod-stats mod-vlr " style="position: relative;">
+				Stats
+			</a>
+				
+				
+		<div class="header-div"></div>
+
+					<div class="header-nav-item mod-vlr-spacing" style="width: 150px;"></div>
+			<div class="header-div mod-vlr-spacing"></div>
+		
+
+
+		<div class="header-switch js-dark-switch ">
+			<div style="text-align: center;">
+				<div style="margin-bottom: 4px;">
+					<i class="fa fa-moon-o"></i>Night:
+				</div>
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					OFF
+				</span>
+			</div>
+		</div>
+
+		<div class="header-div mod-switch"></div>
+
+		<div class="header-switch js-spoiler-switch mod-active">
+			<div style="text-align: center; ">
+				<div style="margin-bottom: 4px;">
+					<i class="fa fa-exclamation"></i>Spoilers:
+				</div>
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					HIDDEN
+				</span>
+			</div>
+		</div>
+		<div class="header-div mod-switch"></div>
+		
+		
+			<a class="header-nav-item mod-login " href="/login">
+				Log in
+				<i class="fa fa-sign-in"></i>
+			</a>
+
+		
+		<div class="header-nav-item mod-solo mod-dropdown mod-notlogged">
+			<i class="fa fa-bars"></i>
+		</div>
+
+		<div class="header-div mod-last"></div>
+
+
+		<div class="header-menu">
+			<div class="header-menu-scroll">
+
+			<a href="/events" class="header-menu-item mod-mobile mod-events">Events</a>
+			<a href="/rankings" class="header-menu-item mod-mobile mod-rankings">Rankings</a>
+			<a href="/stats" class="header-menu-item mod-mobile mod-stats">Stats</a>
+			
+						
+		
+
+			<div class="header-menu-switch js-dark-switch ">
+				Night:
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					OFF
+				</span>
+			</div>
+
+			<div class="header-menu-switch js-spoiler-switch mod-active">
+				Spoilers:
+				<span class="on">
+					ON
+				</span>
+				<span class="off">
+					HIDDEN
+				</span>
+			</div>
+	
+
+							<a href="/login" class="header-menu-item"><i class="fa fa-sign-in"></i> Log in</a>
+						</div>
+		</div>
+	</nav>
+</header>
+
+		<div id="float-left-300"></div>
+	<div id="float-left-160"></div>
+			<script type="text/javascript">
+			window['nitroAds'].createAd('float-left-300', {
+			  "refreshLimit": 0,
+			  "refreshTime": 30,
+			  "renderVisibleOnly": false,
+			  "refreshVisibleOnly": true,
+			  "sizes": [
+			    [
+			      "160",
+			      "600"
+			    ],
+			    [
+			      "300",
+			      "250"
+			    ],
+			    [
+			      "300",
+			      "600"
+			    ],
+			    [
+			      "320",
+			      "480"
+			    ],
+			    [
+			      "320",
+			      "50"
+			    ],
+			    [
+			      "336",
+			      "280"
+			    ],
+			    [
+			      "320",
+			      "100"
+			    ]
+			  ],
+			  "report": {
+			    "enabled": true,
+			    "wording": "Report Ad",
+			    "position": "bottom-left"
+			  },
+			  "mediaQuery": '(min-width: 1820px)',
+			});
+		</script>
+		<script type="text/javascript">
+		window['nitroAds'].createAd('float-left-160', {
+		  "refreshLimit": 0,
+		  "refreshTime": 30,
+		  "renderVisibleOnly": false,
+		  "refreshVisibleOnly": true,
+		  "sizes": [
+		    [
+		      "160",
+		      "600"
+		    ]
+		  ],
+		  "report": {
+		    "enabled": true,
+		    "wording": "Report Ad",
+		    "position": "bottom-left"
+		  },
+		  "mediaQuery": '(min-width: 1550px) and (max-width: 1819px)',
+		});
+	</script>
+	
+		<div id="float-right-300"></div>
+	<div id="float-right-160"></div>
+			<script type="text/javascript">
+			window['nitroAds'].createAd('float-right-300', {
+			  "refreshLimit": 0,
+			  "refreshTime": 30,
+			  "renderVisibleOnly": false,
+			  "refreshVisibleOnly": true,
+			  "sizes": [
+			    [
+			      "160",
+			      "600"
+			    ],
+			    [
+			      "300",
+			      "250"
+			    ],
+			    [
+			      "300",
+			      "600"
+			    ],
+			    [
+			      "320",
+			      "480"
+			    ],
+			    [
+			      "320",
+			      "50"
+			    ],
+			    [
+			      "336",
+			      "280"
+			    ],
+			    [
+			      "320",
+			      "100"
+			    ]
+
+			  ],
+			  "report": {
+			    "enabled": true,
+			    "wording": "Report Ad",
+			    "position": "bottom-left"
+			  },
+			  "mediaQuery": '(min-width: 1820px)',
+			});
+		</script>
+		<script type="text/javascript">
+		window['nitroAds'].createAd('float-right-160', {
+		  "refreshLimit": 0,
+		  "refreshTime": 30,
+		  "renderVisibleOnly": false,
+		  "refreshVisibleOnly": true,
+		  "sizes": [
+		    [
+		      "160",
+		      "600"
+		    ]
+		  ],
+		  "report": {
+		    "enabled": true,
+		    "wording": "Report Ad",
+		    "position": "bottom-left"
+		  },
+		  "mediaQuery": '(min-width: 1550px) and (max-width: 1819px)',
+		});
+	</script>
+	
+	
+
+<div id="wrapper">
+	
+	
+			<div class="col-container">
+												<div class="col mod-1">
+
+							
+						<div class="wf-card mod-header mod-full">
+	<div class="wf-nav">
+		<a class="wf-nav-item mod-first " href="/matches">
+			<div class="wf-nav-item-title">
+				Schedule
+			</div>
+		</a>
+		<a class="wf-nav-item mod-active" href="/matches/results">
+			<div class="wf-nav-item-title">
+				Results
+			</div>
+		</a>
+	</div>
+</div>			<div class="wf-label mod-large">
+			Mon, April 7, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/458821/drx-vs-global-esports-champions-tour-2025-pacific-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-blue mod-first">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											DRX										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-in"></span>
+											Global Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">3w 6d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Sun, April 6, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/459534/cloud9-vs-mibr-champions-tour-2025-americas-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-orange mod-first">
+					
+					<div class="match-item-time">
+													7:15 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											Cloud9										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-br"></span>
+											MIBR										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Americas Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ab71dfbb.png">
+													</div>
+									</a>
+							<a href="/459533/furia-vs-leviat-n-champions-tour-2025-americas-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-br"></span>
+											FURIA										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-ar"></span>
+											LEVIATÁN										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Americas Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ab71dfbb.png">
+													</div>
+									</a>
+							<a href="/461284/s2g-esports-vs-papara-supermassive-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													3:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											S2G Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Papara SuperMassive										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					9																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/469856/novo-esports-vs-bar-a-esports-challengers-league-2025-spain-rising-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													3:05 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-it"></span>
+											NOVO Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-es"></span>
+											Barça eSports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Regular Season&ndash;Week 3							</div>
+							Challengers League 2025 Spain Rising: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b03f5f599.png">
+													</div>
+									</a>
+							<a href="/459561/gamax-esports-vs-baam-esports-challengers-league-2025-mena-resilience-north-africa-and-levant-sp" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:40 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eg"></span>
+											Gamax Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-eg"></span>
+											BAAM Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 4							</div>
+							Challengers League 2025 MENA Resilience: North Africa and Levant Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/461283/ulf-esports-vs-galatasaray-esports-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:30 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											ULF Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					6																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Galatasaray Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/461873/eintracht-frankfurt-vs-rizon-challengers-league-2025-dach-evolution-split-2-a" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											Eintracht Frankfurt										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											RIZON										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+													
+														<div class="wf-tag mod-big mod-twitch">
+								Twitch
+							</div>
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Groups Phase&ndash;Group A							</div>
+							Challengers League 2025 DACH Evolution: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1c7a4e584e.png">
+													</div>
+									</a>
+							<a href="/469854/ucam-esports-club-vs-zeta-gaming-challengers-league-2025-spain-rising-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													1:20 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											UCAM Esports Club										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-es"></span>
+											ZETA Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+													
+							
+							
+														Unavailable
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Regular Season&ndash;Week 3							</div>
+							Challengers League 2025 Spain Rising: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b03f5f599.png">
+													</div>
+									</a>
+							<a href="/469855/koi-f-nix-vs-ramboot-club-challengers-league-2025-spain-rising-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													1:20 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											KOI Fénix										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-es"></span>
+											Ramboot Club										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Regular Season&ndash;Week 3							</div>
+							Challengers League 2025 Spain Rising: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b03f5f599.png">
+													</div>
+									</a>
+							<a href="/461282/galakticos-vs-s2g-esports-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													1:10 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Galakticos										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											S2G Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/459560/gng-esports-vs-voidwalkers-challengers-league-2025-mena-resilience-north-africa-and-levant-split" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tn"></span>
+											GnG Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-ma"></span>
+											VoidWalkers										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 4							</div>
+							Challengers League 2025 MENA Resilience: North Africa and Levant Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/461281/bbl-pcific-vs-eternal-fire-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											BBL PCIFIC										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					15																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Eternal Fire										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/469828/metizport-vs-pixel-lumina-challengers-league-2025-north-east-split-2-r3-0-2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:30 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Metizport										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											Pixel Lumina										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 3 (0-2)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/461879/teamorangegaming-vs-xperion-nxt-challengers-league-2025-dach-evolution-split-2-b" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											TeamOrangeGaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											XPERION NXT										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+													
+														<div class="wf-tag mod-big mod-twitch">
+								Twitch
+							</div>
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Groups Phase&ndash;Group B							</div>
+							Challengers League 2025 DACH Evolution: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1c7a4e584e.png">
+													</div>
+									</a>
+							<a href="/467578/cicadas-gaming-vs-team-valiant-challengers-league-2025-france-revolution-split-2-play-ins" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-fr"></span>
+											CICADAS Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-fr"></span>
+											Team Valiant										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					3																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Play-Ins							</div>
+							Challengers League 2025 France Revolution: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b6db0a21a.png">
+													</div>
+									</a>
+							<a href="/469852/hge-esport-vs-falke-esports-challengers-league-2025-spain-rising-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-it"></span>
+											HGE Esport										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-pt"></span>
+											Falke Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Regular Season&ndash;Week 3							</div>
+							Challengers League 2025 Spain Rising: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b03f5f599.png">
+													</div>
+									</a>
+							<a href="/469853/dnsty-vs-kpi-gaming-challengers-league-2025-spain-rising-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-it"></span>
+											DNSTY										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											KPI Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+													
+							
+							
+														Unavailable
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Regular Season&ndash;Week 3							</div>
+							Challengers League 2025 Spain Rising: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b03f5f599.png">
+													</div>
+									</a>
+							<a href="/461280/galakticos-vs-stanbul-wildcats-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													10:30 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Galakticos										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											İstanbul Wildcats										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/461279/fire-flux-vatangame-vs-eternal-fire-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:30 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Fire Flux Vatangame										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					14																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Eternal Fire										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					12																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/469825/zero-tenacity-vs-gonext-esports-challengers-league-2025-north-east-split-2-r3-2-0" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											Zero Tenacity										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											GoNext Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 3 (2-0)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/469826/enterprise-esports-vs-sweetnsour-challengers-league-2025-north-east-split-2-r3-2-0" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											Enterprise Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											SweetNsour										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 3 (2-0)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/450070/trace-esports-vs-xi-lai-gaming-champions-tour-2025-china-stage-1-w4" class="wf-module-item match-item mod-color mod-bg-after-red ">
+					
+					<div class="match-item-time">
+													8:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Trace Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Xi Lai Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 4							</div>
+							Champions Tour 2025: China Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65dd97cea9a25.png">
+													</div>
+									</a>
+							<a href="/458820/talon-vs-nongshim-redforce-champions-tour-2025-pacific-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-blue ">
+					
+					<div class="match-item-time">
+													7:45 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-th"></span>
+											TALON										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-kr"></span>
+											Nongshim RedForce										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+							<a href="/450069/nova-esports-vs-tyloo-champions-tour-2025-china-stage-1-w4" class="wf-module-item match-item mod-color mod-bg-after-red ">
+					
+					<div class="match-item-time">
+													5:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Nova Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											TYLOO										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 4							</div>
+							Champions Tour 2025: China Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65dd97cea9a25.png">
+													</div>
+									</a>
+							<a href="/458819/paper-rex-vs-boom-esports-champions-tour-2025-pacific-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-blue ">
+					
+					<div class="match-item-time">
+													4:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-sg"></span>
+											Paper Rex										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-id"></span>
+											BOOM Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 0d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+					</div>
+			<div class="wf-label mod-large">
+			Sat, April 5, 2025 
+					</div>
+		<div class="wf-card" style="margin-bottom: 30px; overflow: visible">
+							<a href="/459532/g2-esports-vs-nrg-esports-champions-tour-2025-americas-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-orange mod-first">
+					
+					<div class="match-item-time">
+													8:10 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											G2 Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-us"></span>
+											NRG Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Americas Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ab71dfbb.png">
+													</div>
+									</a>
+							<a href="/459531/2game-esports-vs-kr-esports-champions-tour-2025-americas-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-orange ">
+					
+					<div class="match-item-time">
+													5:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-br"></span>
+											2Game Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-ar"></span>
+											KRÜ Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Americas Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ab71dfbb.png">
+													</div>
+									</a>
+							<a href="/461278/ulf-esports-vs-s2g-esports-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:55 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											ULF Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											S2G Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/461878/mouz-vs-cgn-esports-challengers-league-2025-dach-evolution-split-2-b" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													2:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											MOUZ										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											CGN Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+													
+														<div class="wf-tag mod-big mod-twitch">
+								Twitch
+							</div>
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Groups Phase&ndash;Group B							</div>
+							Challengers League 2025 DACH Evolution: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1c7a4e584e.png">
+													</div>
+									</a>
+							<a href="/461277/galatasaray-esports-vs-eternal-fire-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													1:40 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Galatasaray Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Eternal Fire										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					8																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/461276/galakticos-vs-fire-flux-vatangame-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													1:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Galakticos										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					4																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Fire Flux Vatangame										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/459576/alqadsiah-esports-vs-elected-team-challengers-league-2025-mena-resilience-gcc-pakistan-iraq-spli" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-sa"></span>
+											AlQadsiah Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-ir"></span>
+											Elected Team										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 4							</div>
+							Challengers League 2025 MENA Resilience: GCC-Pakistan-Iraq Split 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63d7ef4687006.png">
+													</div>
+									</a>
+							<a href="/469986/acegear-tempest-vs-esc-gaming-challengers-league-2025-north-east-split-2-r3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											ACEGEAR TEMPEST										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											ESC Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 3 (1-1)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/469987/bitfix-gaming-vs-mir-challengers-league-2025-north-east-split-2-r3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													12:00 PM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-no"></span>
+											Bitfix Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-un"></span>
+											MIR										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					9																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 3 (1-1)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/461275/s2g-esports-vs-bbl-pcific-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:30 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											S2G Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											BBL PCIFIC										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/461872/fokus-vs-alternate-attax-challengers-league-2025-dach-evolution-split-2-a" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											FOKUS										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-de"></span>
+											ALTERNATE aTTaX										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+													
+														<div class="wf-tag mod-big mod-twitch">
+								Twitch
+							</div>
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Groups Phase&ndash;Group A							</div>
+							Challengers League 2025 DACH Evolution: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1c7a4e584e.png">
+													</div>
+									</a>
+							<a href="/465464/team-liquid-academy-vs-formulation-gaming-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Team Liquid Academy										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					14																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Formulation Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					12																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (0-1)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/465465/metizport-vs-esc-gaming-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											Metizport										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					10																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											ESC Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (0-1)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/465466/exo-clan-vs-mir-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-gb"></span>
+											EXO Clan										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					6																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-un"></span>
+											MIR										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (0-1)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/465467/pixel-lumina-vs-bitfix-gaming-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											Pixel Lumina										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-no"></span>
+											Bitfix Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (0-1)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/467577/siko-esports-vs-la-masia-challengers-league-2025-france-revolution-split-2-play-ins" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													11:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-nl"></span>
+											Siko Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					3																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-fr"></span>
+											La Masia										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Play-Ins							</div>
+							Challengers League 2025 France Revolution: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b6db0a21a.png">
+													</div>
+									</a>
+							<a href="/461274/fire-flux-vatangame-vs-fenerbah-e-esports-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													10:40 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Fire Flux Vatangame										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					8																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Fenerbahçe Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/465458/gonext-esports-vs-wylde-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													10:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											GoNext Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-ie"></span>
+											WYLDE										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					9																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (1-0)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/465459/enterprise-esports-vs-acegear-tempest-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													10:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											Enterprise Esports										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											ACEGEAR TEMPEST										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					9																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (1-0)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/465460/zero-tenacity-vs-bonk-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													10:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-pl"></span>
+											Zero Tenacity										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-gb"></span>
+											BONK										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					6																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (1-0)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/465461/sweetnsour-vs-d-ti-ulice-challengers-league-2025-north-east-split-2-r2" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													10:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											SweetNsour										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-eu"></span>
+											děti ulice										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					11																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Upper Swiss Phase&ndash;Round 2 (1-0)							</div>
+							Challengers League 2025 NORTH//EAST: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/678fd5e60056e.png">
+													</div>
+									</a>
+							<a href="/461273/papara-supermassive-vs-bbl-pcific-challengers-league-2025-t-rkiye-birlik-split-2-w3" class="wf-module-item match-item mod-color mod-bg-after-green ">
+					
+					<div class="match-item-time">
+													9:30 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											Papara SuperMassive										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					6																			</div>
+															</div>
+							<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-tr"></span>
+											BBL PCIFIC										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					13																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								League Phase&ndash;Week 3							</div>
+							Challengers League 2025 Türkiye Birlik: Split 2											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/63a1b2d391745.png">
+													</div>
+									</a>
+							<a href="/450068/edward-gaming-vs-titan-esports-club-champions-tour-2025-china-stage-1-w4" class="wf-module-item match-item mod-color mod-bg-after-red ">
+					
+					<div class="match-item-time">
+													7:30 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											EDward Gaming										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-cn"></span>
+											Titan Esports Club										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					1																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 4							</div>
+							Champions Tour 2025: China Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/65dd97cea9a25.png">
+													</div>
+									</a>
+							<a href="/458818/rex-regum-qeon-vs-zeta-division-champions-tour-2025-pacific-stage-1-w3" class="wf-module-item match-item mod-color mod-bg-after-blue ">
+					
+					<div class="match-item-time">
+													6:00 AM											</div>
+
+					<div class="match-item-vs">
+													<div class="match-item-vs-team mod-winner">
+																	<div class="match-item-vs-team-name">
+																					<i class="js-spoiler fa fa-caret-right" style="position: absolute; left: -10px; top: 1px; color: #61b875; font-size: 11px;"></i>
+																				<div class="text-of">
+											<span class="flag mod-id"></span>
+											Rex Regum Qeon										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					2																			</div>
+															</div>
+							<div class="match-item-vs-team ">
+																	<div class="match-item-vs-team-name">
+																				<div class="text-of">
+											<span class="flag mod-jp"></span>
+											ZETA DIVISION										</div>
+									</div>
+									<div class="match-item-vs-team-score  js-spoiler ">
+																					0																			</div>
+															</div>
+											</div>
+					
+					<div class="match-item-eta">
+													<div class="ml mod-completed">
+								<div class="ml-status">Completed</div>
+								<div class="ml-eta mod-completed">4w 1d</div>
+							</div>
+											</div>
+
+					<div class="match-item-note">
+						
+					</div>
+
+					
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							Stats:
+						</div>
+
+						
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Map
+								</div>
+							
+															<div class="wf-tag mod-big" style="background: #e05c65;">
+									Player
+								</div>
+							
+						
+											</div>
+					
+
+					<div class="match-item-vod">
+						<div class="wf-module-label">
+							VODs:
+						</div>
+
+																				<div class="wf-tag mod-big mod-yt">
+								YouTube
+							</div>
+							
+							
+							
+													
+											</div>	
+
+
+					<div class="match-item-event text-of">
+													<div class="match-item-event-series text-of">
+								Group Stage&ndash;Week 3							</div>
+							Champions Tour 2025: Pacific Stage 1											</div>
+
+											<div class="match-item-icon">
+															<img src="//owcdn.net/img/640f5ae002674.png">
+													</div>
+									</a>
+					</div>
+	<div class="action-container">
+	<div>
+			</div>
+	<div class="action-container-pages">
+		
+														<a href="/matches/results" class="btn mod-page">1</a>
+								<span class="page-ellipsis">&bull;&bull;</span>							<a href="/matches/results/?page=6" class="btn mod-page">6</a>
+															<a href="/matches/results/?page=7" class="btn mod-page">7</a>
+															<a href="/matches/results/?page=8" class="btn mod-page">8</a>
+															<span class="btn mod-page mod-active">9</span>
+															<a href="/matches/results/?page=10" class="btn mod-page">10</a>
+															<a href="/matches/results/?page=11" class="btn mod-page">11</a>
+															<a href="/matches/results/?page=12" class="btn mod-page">12</a>
+								<span class="page-ellipsis">&bull;&bull;</span>							<a href="/matches/results/?page=577" class="btn mod-page">577</a>
+					
+				
+			</div>
+</div>					</div>
+																																																																	</div>
+			
+		
+			
+	<div class="media-vw">
+	</div>
+</div>
+<div>
+	<script>
+		window['nitroAds'].createAd('anchor-mobile-bottom', {
+		  "refreshLimit": 0,
+		  "refreshTime": 30,
+		  "format": "anchor",
+		  "anchor": "bottom",
+		  "anchorPersistClose": true,
+		  "report": {
+		    "enabled": true,
+		    "icon": true,
+		    "wording": "Report Ad",
+		    "position": "top-right"
+		  },
+		  "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+		});
+	</script>
+	<div id="anchor-mobile-bottom"></div>
+
+
+	<script>
+	window['nitroAds'].createAd('nitro-video', {
+	  "refreshTime": 30,
+	  "format": "floating",
+	  "report": {
+	    "enabled": true,
+	    "icon": true,
+	    "wording": "Report Ad",
+	    "position": "top-left"
+	  },
+	  "mediaQuery": "(min-width: 1840px)"
+	});
+	</script>
+
+<div class="footer">
+	<div class="footer-inner">
+		<div class="header-div mod-first"></div>
+
+			<a href="mailto:community@VLR.gg" class="contact">Contact</a>
+			<div class="sdot">&bull;</div>
+			<a href="/privacy" class="privacy">Privacy</a>
+			<div class="sdot">&bull;</div>
+			<a href="/terms" class="privacy">Terms</a>
+			<div class="sdot">&bull;</div>
+
+							<a href="/user/view/desktop">
+					Switch to Desktop
+				</a>
+			
+	
+			<div class="find-txt">
+				Find us on:
+			</div>
+			
+							<a href="https://twitter.com/vlrdotgg" target="_blank" class="social mod-twitter">
+					<i class="fa fa-twitter mod-twitter"></i>Twitter
+				</a>
+						
+							<a href="https://discord.com/invite/VLR" target="_blank" class="social mod-discord">
+					<img src="/img/icons/social/discord.svg" class="mod-discord">Discord
+				</a>
+						
+			
+			
+		<div class="header-div mod-last"></div>
+	</div>	
+</div>	<script src="/js/common/vendor/jquery.min.js"></script>
+<script src="/js/common/main.min.js?v=74"></script>
+
+	<a id="bottom"></a>
+</body>
+</html>
