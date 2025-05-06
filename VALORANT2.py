@@ -12,6 +12,10 @@ os.makedirs('cache', exist_ok = True)
 os.makedirs('schedule', exist_ok = True)
 
 def geturl(url):
+    #Mimic normal browser when requesting, so don't get ip banned
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
     #give file a hash name
     hash = hashlib.md5(url.encode('utf-8')).hexdigest()
     #give file path in cache
@@ -22,7 +26,7 @@ def geturl(url):
             contents = f.read()
         return contents
     #if path doesn't exist, write contents of url to it as txt
-    contents = requests.get(url).text
+    contents = requests.get(url, headers = headers).text
     with open(file, 'w', encoding = 'utf-8') as f:
         f.write(contents)
     return contents
@@ -115,13 +119,13 @@ else:
                     'ADR': averager(ADR)
                 }
         hth_html = soup.find('div', class_ = 'match-header-vs-score').text.replace('\n', '').replace('\t', '')
-        hth_score = re.search('\d:\d', hth_html).group()
+        hth_score = re.search(r'\d:\d', hth_html).group()
         team1 = soup.find('a', 'match-header-link wf-link-hover mod-1')
         team2 = soup.find('a', 'match-header-link wf-link-hover mod-2')
         namegob = team1.text.strip().replace('\n', '').replace('\t', '')
         namegoob = team2.text.strip().replace('\n', '').replace('\t', '')
-        name1 = re.sub('\[\d+\]', '', namegob)
-        name2 = re.sub('\[\d+\]', '', namegoob)
+        name1 = re.sub(r'\[\d+\]', '', namegob)
+        name2 = re.sub(r'\[\d+\]', '', namegoob)
         hth[match_name] = {
             'Team 1': name1,
             'Team 2': name2,
@@ -169,7 +173,7 @@ def generateprobability(matchlink):
     if 'https://www.vlr.gg/' in matchlink:
         matchinfo = matchlink.replace('https://www.vlr.gg', '')
         matchhash = hashlib.md5(matchinfo.encode('utf-8')).hexdigest()
-    
+
     def get_team_stats(matchhash):
         playerlist = tbd[matchhash]
         team_avg = {}
