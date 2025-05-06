@@ -229,15 +229,15 @@ def generateprobability(matchlink):
     keys = team_stat.keys()
     keys = [key for key in keys]
 
-    team1 = 1.429*(team_stat[keys[0]]['avg_acs'])**1.2 + team_stat[keys[0]]['avg_kast'] + team_stat[keys[0]]['avg_adr'] + previous_matches()
-    team2 = 1.429*(team_stat[keys[1]]['avg_acs'])**1.2 + team_stat[keys[1]]['avg_kast'] + team_stat[keys[1]]['avg_adr'] + previous_matches()
+    team1 = 1.429*(team_stat[keys[0]]['avg_acs']) + team_stat[keys[0]]['avg_kast'] + team_stat[keys[0]]['avg_adr'] + previous_matches()
+    team2 = 1.429*(team_stat[keys[1]]['avg_acs']) + team_stat[keys[1]]['avg_kast'] + team_stat[keys[1]]['avg_adr'] + previous_matches()
 
     values = np.array([team1, team2])
     
     probabilities = values/ sum(values)
     probabilities = 100*probabilities
 
-    STATEMENT = keys[0] + ": " + str(probabilities[0]) + "%\n" + keys[1] + ": " + str(probabilities[1]) + "%"
+    STATEMENT = f"{keys[0]}: {str(probabilities[0])}% \n{keys[1]}: {str(probabilities[1])}%"
 
     return STATEMENT
 
