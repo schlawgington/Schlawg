@@ -46,6 +46,7 @@ else:
                     } 
             else:
                 matches[match] = {
+                    "Score": f"{wl_stats[match]['Team 1']} vs {wl_stats[match]['Team 2']} {wl_stats[match]['Score:']}",
                     teamname: {
                         'acs': [stats[player][match]['ACS']],
                         'kast': [stats[player][match]['KAST']],
