@@ -244,5 +244,5 @@ def generateprobability(matchlink):
 
     return STATEMENT
 
-PREDICTION = generateprobability("https://www.vlr.gg/481899/burger-boyz-vs-tsm-challengers-league-2025-north-america-ace-stage-2-r6")
+PREDICTION = generateprobability("https://www.vlr.gg/481897/funhavers-vs-winthrop-university-challengers-league-2025-north-america-ace-stage-2-r6")
 print(PREDICTION)

@@ -62,15 +62,25 @@ else:
                             'a': [stats[player][match]['A']],
                             'adr': [stats[player][match]['ADR']]
                             }
-                        }
+                        },
+                    "Stat Diff": {
+                        'delta acs': 0,
+                        'delta kast': 0,
+                        'delta k': 0,
+                        'delta d': 0,
+                        'delta a': 0,
+                        'delta adr': 0,
                     }
+                }
+
     for match in matches.keys():
-        for teamname in matches[match]["Teams"].keys():
-            matches[match]["Teams"][teamname]['acs'] = averager(matches[match]["Teams"][teamname]['acs'])
-            matches[match]["Teams"][teamname]['kast'] = averager(matches[match]["Teams"][teamname]['kast'])
-            matches[match]["Teams"][teamname]['k'] = averager(matches[match]["Teams"][teamname]['k'])
-            matches[match]["Teams"][teamname]['d'] = averager(matches[match]["Teams"][teamname]['d'])
-            matches[match]["Teams"][teamname]['a'] = averager(matches[match]["Teams"][teamname]['a'])
-            matches[match]["Teams"][teamname]['adr'] = averager(matches[match]["Teams"][teamname]['adr'])
+        teamname = list(matches[match]["Teams"].keys())
+        matches[match]["Stat Diff"]['delta acs'] = averager(matches[match]["Teams"][teamname[0]]['acs']) - averager(matches[match]["Teams"][teamname[1]]['acs'])
+        matches[match]["Stat Diff"]['delta kast'] = averager(matches[match]["Teams"][teamname[0]]['kast']) - averager(matches[match]["Teams"][teamname[1]]['kast'])
+        matches[match]["Stat Diff"]['delta k'] = averager(matches[match]["Teams"][teamname[0]]['k']) - averager(matches[match]["Teams"][teamname[1]]['k'])
+        matches[match]["Stat Diff"]['delta d'] = averager(matches[match]["Teams"][teamname[0]]['d']) - averager(matches[match]["Teams"][teamname[1]]['d'])
+        matches[match]["Stat Diff"]['delta a'] = averager(matches[match]["Teams"][teamname[0]]['a']) - averager(matches[match]["Teams"][teamname[1]]['a'])
+        matches[match]["Stat Diff"]['delta adr'] =  averager(matches[match]["Teams"][teamname[0]]['adr']) - averager(matches[match]["Teams"][teamname[1]]['adr'])
+
     with open(avg_json, 'w', encoding = 'utf-8') as f:
         json.dump(matches, f, indent = 4)
