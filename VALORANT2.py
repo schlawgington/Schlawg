@@ -133,10 +133,9 @@ else:
         json.dump(hth, k, indent = 4)
 
 tbd_json = 'tbd.json'
-tbd = None
+tbd = loadfile(tbd_json)
 
-if os.path.exists(tbd_json):
-    tbd = loadfile(tbd_json)
+if tbd:
     print("Scheduled matches loaded")
 else:
     schedule = [BeautifulSoup(getmatch("https://www.vlr.gg/matches"), 'html.parser'), BeautifulSoup(getmatch("https://www.vlr.gg/matches/?page=2"), 'html.parser')]

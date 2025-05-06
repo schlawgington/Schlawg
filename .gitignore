@@ -1,2 +1,4 @@
 cache
 schedule
+*.html
+*.json
