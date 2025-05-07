@@ -117,14 +117,38 @@ class logisticregressionmodel:
             [i for i in winloss]
         )
 
-        z = np.array(
-            [self.b0 + self.b1*deltas[0][i] + self.b2*deltas[1][i] + self.b3*deltas[2][i] for i in range(len(deltas[0]))]
-        )
+        def sigmoid(z):
+            if z >= 0:
+                return 1 / (1 + np.exp(-z))
+            else:
+                exp_z = np.exp(z)
+                return exp_z / (1 + exp_z)
 
-        prob = [1 / (1 + np.exp(-1*i)) for i in z]
-        probarr = np.array(prob)
+        b1 = []
 
-        pretty = [f"{team[i]}: {prob[i]}" for i in range(len(team))]
+        for j in range(100):
+            z = np.array(
+                [self.b0 + self.b1*deltas[0][i] + self.b2*deltas[1][i] + self.b3*deltas[2][i] for i in range(len(deltas[0]))]
+            )
+
+            unclippedprob = [sigmoid(i) for i in z]
+            epsilon = 1e-10
+            prob = np.clip(unclippedprob, epsilon, 1 - epsilon)
+
+            acsloss = sum([prob[i] - winloss[i]*deltas[0][i] for i in range(len(winloss))]) / len(winloss)
+            kastloss = sum([prob[i] - winloss[i]*deltas[1][i] for i in range(len(winloss))]) / len(winloss)
+            adrloss = sum([prob[i] - winloss[i]*deltas[2][i] for i in range(len(winloss))]) / len(winloss)
+            loss = sum([winloss[i]*np.log(prob[i]) + (1 - winloss[i])*np.log(1-prob[i]) for i in range(len(winloss))]) / len(winloss)
+
+            learn_rate = 0.0001
+            self.b0 = self.b0 - learn_rate*loss
+            self.b1 = self.b1 - learn_rate*acsloss
+            self.b2 = self.b2 - learn_rate*kastloss
+            self.b3 = self.b3 - learn_rate*adrloss
+            
+            b1.append(self.b1)
+
+        pretty = [f"{team[i]}: {100*prob[i]}%" for i in range(len(team))]
 
         return pretty
 
