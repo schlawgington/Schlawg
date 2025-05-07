@@ -3,6 +3,7 @@ import os
 from collections import defaultdict
 import hashlib
 import numpy as np
+import re
 
 def loadfile(file):
     if os.path.exists(file):
@@ -84,3 +85,28 @@ else:
 
     with open(avg_json, 'w', encoding = 'utf-8') as f:
         json.dump(matches, f, indent = 4)
+
+def generatecorr():
+    match_scores = [re.search('\d:\d', avg_stats[match]["Score"]).group(0) for match in avg_stats.keys()]
+    winloss = []
+    for i in match_scores:
+        splitlist = i.split(":")
+        if int(splitlist[0]) > int(splitlist[1]):
+            winloss.append(1)
+        else:
+            winloss.append(0)
+
+    deltas = np.array(
+        [
+            [avg_stats[match]["Stat Diff"]['delta acs'] for match in avg_stats.keys()],
+            [avg_stats[match]["Stat Diff"]['delta kast'] for match in avg_stats.keys()],
+            [avg_stats[match]["Stat Diff"]['delta adr'] for match in avg_stats.keys()],
+            [i for i in winloss]
+        ]
+    )
+
+    def sigmoid(z):
+        sigmoided = 1 / (1 + exp(z))
+        return sigmoieded
+
+    return deltas

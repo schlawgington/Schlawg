@@ -32,13 +32,16 @@ def geturl(url):
     return contents
 
 def getmatch(url):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
     hash = hashlib.md5(url.encode('utf-8')).hexdigest()
     file = os.path.join('schedule', hash)
     if os.path.exists(file):
         with open(file, 'r', encoding = 'utf-8') as f:
             contents = f.read()
         return contents
-    contents = requests.get(url).text
+    contents = requests.get(url, headers = headers).text
     with open(file, 'w', encoding = 'utf-8') as f:
         f.write(contents)
     return contents
