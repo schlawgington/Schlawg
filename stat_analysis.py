@@ -100,13 +100,19 @@ def generatecorr():
         [
             [avg_stats[match]["Stat Diff"]['delta acs'] for match in avg_stats.keys()],
             [avg_stats[match]["Stat Diff"]['delta kast'] for match in avg_stats.keys()],
-            [avg_stats[match]["Stat Diff"]['delta adr'] for match in avg_stats.keys()],
-            [i for i in winloss]
+            [avg_stats[match]["Stat Diff"]['delta adr'] for match in avg_stats.keys()]
         ]
     )
 
-    def sigmoid(z):
-        sigmoided = 1 / (1 + exp(z))
-        return sigmoieded
+    results = np.array(
+        [i for i in winloss]
+    )
 
-    return deltas
+    def sigmoid(z):
+        sigmoided = 1 / (1 + np.exp(-1*z))
+        return sigmoided
+
+    return results
+
+x = generatecorr()
+print(x)
