@@ -103,6 +103,8 @@ class logisticregressionmodel:
             else:
                 winloss.append(0)
 
+        team = [re.match(r"^(.*)\s\d+:\d+$", avg_stats[match]["Score"]).group(1) for match in avg_stats.keys()]
+
         deltas = np.array(
             [
                 [avg_stats[match]["Stat Diff"]['delta acs'] for match in avg_stats.keys()],
@@ -122,7 +124,9 @@ class logisticregressionmodel:
         prob = [1 / (1 + np.exp(-1*i)) for i in z]
         probarr = np.array(prob)
 
-        return probarr
+        pretty = [f"{team[i]}: {prob[i]}" for i in range(len(team))]
+
+        return pretty
 
 x = logisticregressionmodel()
 print(x.probabilities_yay())
