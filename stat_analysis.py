@@ -86,33 +86,43 @@ else:
     with open(avg_json, 'w', encoding = 'utf-8') as f:
         json.dump(matches, f, indent = 4)
 
-def generatecorr():
-    match_scores = [re.search('\d:\d', avg_stats[match]["Score"]).group(0) for match in avg_stats.keys()]
-    winloss = []
-    for i in match_scores:
-        splitlist = i.split(":")
-        if int(splitlist[0]) > int(splitlist[1]):
-            winloss.append(1)
-        else:
-            winloss.append(0)
+class logisticregressionmodel:
+    def __init__(self):
+        self.b0 = -0.0081
+        self.b1 = -0.0044
+        self.b2 = -0.0031
+        self.b3 = 0.0079
 
-    deltas = np.array(
-        [
-            [avg_stats[match]["Stat Diff"]['delta acs'] for match in avg_stats.keys()],
-            [avg_stats[match]["Stat Diff"]['delta kast'] for match in avg_stats.keys()],
-            [avg_stats[match]["Stat Diff"]['delta adr'] for match in avg_stats.keys()]
-        ]
-    )
+    def probabilities_yay(self):
+        match_scores = [re.search(r'\d:\d', avg_stats[match]["Score"]).group(0) for match in avg_stats.keys()]
+        winloss = []
+        for i in match_scores:
+            splitlist = i.split(":")
+            if int(splitlist[0]) > int(splitlist[1]):
+                winloss.append(1)
+            else:
+                winloss.append(0)
 
-    results = np.array(
-        [i for i in winloss]
-    )
+        deltas = np.array(
+            [
+                [avg_stats[match]["Stat Diff"]['delta acs'] for match in avg_stats.keys()],
+                [avg_stats[match]["Stat Diff"]['delta kast'] for match in avg_stats.keys()],
+                [avg_stats[match]["Stat Diff"]['delta adr'] for match in avg_stats.keys()]
+            ]
+        )
 
-    def sigmoid(z):
-        sigmoided = 1 / (1 + np.exp(-1*z))
-        return sigmoided
+        results = np.array(
+            [i for i in winloss]
+        )
 
-    return results
+        z = np.array(
+            [self.b0 + self.b1*deltas[0][i] + self.b2*deltas[1][i] + self.b3*deltas[2][i] for i in range(len(deltas[0]))]
+        )
 
-x = generatecorr()
-print(x)
+        prob = [1 / (1 + np.exp(-1*i)) for i in z]
+        probarr = np.array(prob)
+
+        return probarr
+
+x = logisticregressionmodel()
+print(x.probabilities_yay())

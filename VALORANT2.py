@@ -246,6 +246,3 @@ def generateprobability(matchlink):
     STATEMENT = f"{keys[0]}: {str(probabilities[0])}% \n{keys[1]}: {str(probabilities[1])}%"
 
     return STATEMENT
-
-PREDICTION = generateprobability("https://www.vlr.gg/481897/funhavers-vs-winthrop-university-challengers-league-2025-north-america-ace-stage-2-r6")
-print(PREDICTION)
