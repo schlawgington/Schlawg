@@ -33,7 +33,10 @@ if avg_stats:
 else:
     matches = {}
     for player in stats.keys():
-        teamname = player.rsplit(" ", 1)[1]
+        if ' ' in player:
+            teamname = player.rsplit(" ", 1)[1]
+        else:
+            teamname = re.search(r"[^a-z]$", player).group(0)
         for match in stats[player].keys():
             if match in matches:
                 if teamname in matches[match]["Teams"]:

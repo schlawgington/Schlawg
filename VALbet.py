@@ -50,7 +50,9 @@ def averager(strlist):
     x = []
     for k in strlist:
         if '%' in k:
-            k = k.replace('%', '').replace('\xa0', '')
+            k = k.replace('%', '')
+        if '\xa0' in k:
+            k = k.replace('\xa0', '')
         if k == '':
             continue
         x.append(int(k))
@@ -77,7 +79,7 @@ if stats and hth_stats:
     print("Stats loaded")
 else:
     results = []
-    for i in range(1,11):
+    for i in range(1,25):
         if i == 1:
             results.append(BeautifulSoup(geturl("https://www.vlr.gg/matches/results/"), 'html.parser'))
         results.append(BeautifulSoup(geturl("https://www.vlr.gg/matches/results/?page=" + str(i)), 'html.parser'))
@@ -104,6 +106,7 @@ else:
             for row in player_row:
                 name_td = row.find('td' , class_ = 'mod-player')
                 name = name_td.text.replace('\n', '').replace('\t', '')
+                name = name.rsplit('', 1)[0]
 
                 stat_tds = row.find_all('td')
                 ACS = stat_tds[3].text.strip().replace('\n', ',').split(',')
@@ -172,10 +175,10 @@ else:
     with open(tbd_json, 'w', encoding = 'utf-8') as f:
         json.dump(tbd_teams, f, indent = 4)
 
-b0 = 0.0020517840227505385
-b1 = 0.08474820129449973
-b2 = 0.023418867961166396
-b3 = 0.0622583790722775
+b0 = 0.0020489347393461647
+b1 = 0.07228577070993243
+b2 = 0.01969340959882133
+b3 = 0.05427056700622877
 
 def generateprobability(matchlink):
     if 'https://www.vlr.gg/' in matchlink:
@@ -258,5 +261,5 @@ def generateprobability(matchlink):
 
     return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/485370/funplus-phoenix-vs-all-gamers-china-evolution-series-act-2-x-asian-champions-league-ro12")
+x = generateprobability("https://www.vlr.gg/473841/gen-g-vs-rex-regum-qeon-champions-tour-2025-pacific-stage-1-ubf")
 print(x)
