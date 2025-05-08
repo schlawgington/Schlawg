@@ -125,8 +125,6 @@ class logisticregressionmodel:
                 exp_z = np.exp(z)
                 return exp_z / (1 + exp_z)
 
-        b1 = []
-
         for j in range(100):
             z = np.array(
                 [self.b0 + self.b1*deltas[0][i] + self.b2*deltas[1][i] + self.b3*deltas[2][i] for i in range(len(deltas[0]))]
@@ -146,9 +144,11 @@ class logisticregressionmodel:
             self.b1 = self.b1 - learn_rate*acsloss
             self.b2 = self.b2 - learn_rate*kastloss
             self.b3 = self.b3 - learn_rate*adrloss
-            
-            b1.append(self.b1)
 
         pretty = [f"{team[i]}: {100*prob[i]:.2f}% to {100*(1-prob[i]):.2f}" for i in range(len(team))]
 
-        return pretty
+        return self.b0, self.b1, self.b2, self.b3
+    
+log = logisticregressionmodel()
+coeff = log.probabilities_yay()
+print(coeff)

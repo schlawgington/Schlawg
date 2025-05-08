@@ -172,6 +172,11 @@ else:
     with open(tbd_json, 'w', encoding = 'utf-8') as f:
         json.dump(tbd_teams, f, indent = 4)
 
+b0 = 0.0020517840227505385
+b1 = 0.08474820129449973
+b2 = 0.023418867961166396
+b3 = 0.0622583790722775
+
 def generateprobability(matchlink):
     if 'https://www.vlr.gg/' in matchlink:
         matchinfo = matchlink.replace('https://www.vlr.gg', '')
@@ -229,20 +234,29 @@ def generateprobability(matchlink):
                 else:
                     return 0
     
+    def sigmoid(z):
+        if z >= 0:
+            return 1 / (1 + np.exp(-z))
+        else:
+            exp_z = np.exp(z)
+            return exp_z / (1 + exp_z)
+    
     team_stat = get_team_stats(matchhash)
     previous_match = previous_matches()
 
     keys = team_stat.keys()
     keys = [key for key in keys]
 
-    team1 = 1.429*(team_stat[keys[0]]['avg_acs']) + team_stat[keys[0]]['avg_kast'] + team_stat[keys[0]]['avg_adr'] + previous_matches()
-    team2 = 1.429*(team_stat[keys[1]]['avg_acs']) + team_stat[keys[1]]['avg_kast'] + team_stat[keys[1]]['avg_adr'] + previous_matches()
+    acs_diff = team_stat[keys[0]]['avg_acs'] - team_stat[keys[1]]['avg_acs']
+    kast_diff = team_stat[keys[0]]['avg_kast'] - team_stat[keys[1]]['avg_kast']
+    adr_diff = team_stat[keys[0]]['avg_adr'] - team_stat[keys[1]]['avg_adr']
 
-    values = np.array([team1, team2])
-    
-    probabilities = values/ sum(values)
-    probabilities = 100*probabilities
+    z = b0 + b1*acs_diff + b2*kast_diff + b3*adr_diff
+    prob = sigmoid(z)
 
-    STATEMENT = f"{keys[0]}: {str(probabilities[0])}%\n{keys[1]}: {str(probabilities[1])}%"
+    STATEMENT = f"{keys[0]}: {str(prob)}%\n{keys[1]}: {str(1-prob)}%"
 
     return STATEMENT
+
+x = generateprobability("https://www.vlr.gg/485370/funplus-phoenix-vs-all-gamers-china-evolution-series-act-2-x-asian-champions-league-ro12")
+print(x)
