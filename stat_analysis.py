@@ -4,6 +4,7 @@ from collections import defaultdict
 import hashlib
 import numpy as np
 import re
+import matplotlib.pyplot as plt
 
 def loadfile(file):
     if os.path.exists(file):
@@ -148,9 +149,6 @@ class logisticregressionmodel:
             
             b1.append(self.b1)
 
-        pretty = [f"{team[i]}: {100*prob[i]}%" for i in range(len(team))]
+        pretty = [f"{team[i]}: {100*prob[i]:.2f}% to {100*(1-prob[i]):.2f}" for i in range(len(team))]
 
         return pretty
-
-x = logisticregressionmodel()
-print(x.probabilities_yay())

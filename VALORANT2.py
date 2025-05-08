@@ -243,6 +243,6 @@ def generateprobability(matchlink):
     probabilities = values/ sum(values)
     probabilities = 100*probabilities
 
-    STATEMENT = f"{keys[0]}: {str(probabilities[0])}% \n{keys[1]}: {str(probabilities[1])}%"
+    STATEMENT = f"{keys[0]}: {str(probabilities[0])}%\n{keys[1]}: {str(probabilities[1])}%"
 
     return STATEMENT
