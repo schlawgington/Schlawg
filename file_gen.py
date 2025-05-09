@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import hashlib
 import re
+from collections import defaultdict
 import numpy as np
 
 os.makedirs('cache', exist_ok = True)
@@ -56,13 +57,16 @@ def loadfile(file):
 def averager(strlist):
     x = []
     for k in strlist:
+        if isinstance(k, (int, float)):
+            x.append(k)
+            continue
         if '%' in k:
             k = k.replace('%', '')
         if '\xa0' in k:
             k = k.replace('\xa0', '')
         if k == '':
             continue
-        x.append(int(k))
+        x.append(float(k))
     if not x:
         return 0
     y = sum(x) / len(x)
@@ -76,7 +80,7 @@ if stats:
     print("Stats loaded")
 else:
     results = []
-    for i in range(1,3):
+    for i in range(1,25):
         if i == 1:
             results.append(BeautifulSoup(geturl("https://www.vlr.gg/matches/results/"), 'html.parser'))
         results.append(BeautifulSoup(geturl("https://www.vlr.gg/matches/results/?page=" + str(i)), 'html.parser'))
@@ -101,43 +105,51 @@ else:
 
         Score_html = soup.find('div', class_ = 'match-header-vs')
 
+        sep = ''
+
         team1_html = Score_html.find('div', class_ = 'match-header-link-name mod-1')
-        team1 = [i.text.strip() for i in team1_html]
+        team1_list = [i.text.strip() for i in team1_html if '' not in i]
+        team1 = sep.join(team1_list).replace('\n', '').replace('\t', '')
 
         team2_html = Score_html.find('div', class_ = 'match-header-link-name mod-2')
-        team2 = [i.text.strip() for i in team2_html]
+        team2_list = [i.text.strip() for i in team2_html if '' not in i]
+        team2 = sep.join(team2_list).replace('\n', '').replace('\t', '')
 
+        if Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-winner') is None or Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-loser') is None:
+            continue
         Score = [Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-winner').text.strip(), Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-loser').text.strip()]
 
-        for team in team_data:
-            player_row = team.find_all('tr')
-            for row in player_row:
-                name_td = row.find('td' , class_ = 'mod-player')
-                notname = name_td.text.replace('\n', '').replace('\t', '')
-                nameteam = notname.rsplit(' ', 1)
-                name = nameteam[0]
-                teamname = nameteam[1]
+        teamnames = [team1, team2]
 
-                stat_tds = row.find_all('td')
-                ACS = stat_tds[3].text.strip().replace('\n', ',').split(',')
-                KAST = stat_tds[8].text.strip().replace('\n', ',').split(',')
-                ADR = stat_tds[9].text.strip().replace('\n', ',').split(',')
+        for teamname in teamnames:
+            for team in team_data:
+                player_row = team.find_all('tr')
+                for row in player_row:
+                    name_td = row.find('td' , class_ = 'mod-player')
+                    notname = name_td.text.replace('\n', '').replace('\t', '')
+                    nameteam = notname.rsplit(' ', 1)
+                    name = nameteam[0]
 
-                if teamname not in team_stats:
-                    team_stats[teamname] = {}
+                    stat_tds = row.find_all('td')
+                    ACS = stat_tds[3].text.strip().replace('\n', ',').split(',')
+                    KAST = stat_tds[8].text.strip().replace('\n', ',').split(',')
+                    ADR = stat_tds[9].text.strip().replace('\n', ',').split(',')
 
-                if name not in team_stats[teamname]:
-                    team_stats[teamname][name] = {}
+                    if teamname not in team_stats:
+                        team_stats[teamname] = {}
 
-                if match_name not in team_stats[teamname][name]:
-                    team_stats[teamname][name][match_name] = {}
+                    if name not in team_stats[teamname]:
+                        team_stats[teamname][name] = {}
 
-                team_stats[teamname][name][match_name] = {
-                    'ACS': averager(ACS),
-                    'KAST': averager(KAST),
-                    'ADR': averager(ADR),
-                    'Score': f"{team1[1]}{team1[3]} {Score[0]}:{Score[1]} {team2[1]}{team2[3]}"
-                }
+                    if match_name not in team_stats[teamname][name]:
+                        team_stats[teamname][name][match_name] = {}
+
+                    team_stats[teamname][name][match_name] = {
+                        'ACS': averager(ACS),
+                        'KAST': averager(KAST),
+                        'ADR': averager(ADR),
+                        'Score': f"{team1[0]}{team1[1]} {Score[0]}:{Score[1]} {team2[0]}{team2[1]}"
+                    }
     with open(stat_json, 'w', encoding = 'utf-8') as f:
         json.dump(team_stats, f, indent = 4)
 
@@ -165,7 +177,8 @@ else:
             for name in names:
                 if len(players) > 9:
                     break
-                player_name = name.text.replace('\t', '').replace('\n', '')
+                bad_player_name = name.text.strip()
+                player_name = bad_player_name.rsplit(" ", 1)[0]
                 players.append(player_name)
         tbd_teams[matchname] = players
     with open(tbd_json, 'w', encoding = 'utf-8') as f:
@@ -174,62 +187,46 @@ else:
 if avg_stats:
     print("Have stats")
 else:
-    matches = {}
-    breakpoint()
-    for player in stats.keys():
-        if ' ' in player:
-            teamname = player.rsplit(" ", 1)[1]
-        else:
-            teamname = re.search(r"[^a-z]$", player).group(0)
-        for match in stats[player].keys():
-            if match in matches:
-                if teamname in matches[match]["Teams"]:
-                    matches[match]["Teams"][teamname]['acs'].append(stats[player][match]['ACS'])
-                    matches[match]["Teams"][teamname]['kast'].append(stats[player][match]['KAST'])
-                    matches[match]["Teams"][teamname]['k'].append(stats[player][match]['K'])
-                    matches[match]["Teams"][teamname]['d'].append(stats[player][match]['D'])
-                    matches[match]["Teams"][teamname]['a'].append(stats[player][match]['A'])
-                    matches[match]["Teams"][teamname]['adr'].append(stats[player][match]['ADR'])
-                else:
-                    matches[match]["Teams"][teamname] = {
-                        'acs': [stats[player][match]['ACS']],
-                        'kast': [stats[player][match]['KAST']],
-                        'k': [stats[player][match]['K']],
-                        'd': [stats[player][match]['D']],
-                        'a': [stats[player][match]['A']],
-                        'adr': [stats[player][match]['ADR']]
-                        } 
-            else:
-                matches[match] = {
-                    "Score": f"{wl_stats[match]['Team 1']} vs {wl_stats[match]['Team 2']} {wl_stats[match]['Score:']}",
-                    "Teams": {
-                        teamname: {
-                            'acs': [stats[player][match]['ACS']],
-                            'kast': [stats[player][match]['KAST']],
-                            'k': [stats[player][match]['K']],
-                            'd': [stats[player][match]['D']],
-                            'a': [stats[player][match]['A']],
-                            'adr': [stats[player][match]['ADR']]
-                            }
-                        },
-                    "Stat Diff": {
-                        'delta acs': 0,
-                        'delta kast': 0,
-                        'delta k': 0,
-                        'delta d': 0,
-                        'delta a': 0,
-                        'delta adr': 0,
+    matches = defaultdict(lambda: defaultdict(dict))
+    for team in stats.keys():
+        for player in stats[team].keys():
+            for match in stats[team][player].keys():
+                if 'acs' not in matches[match][team]:
+                    matches[match][team] = {
+                        'acs': [],
+                        'kast': [],
+                        'adr': []
                     }
-                }
-
+                if len(matches[match][team]['acs']) < 5:
+                    matches[match][team]['acs'].append(stats[team][player][match]['ACS'])
+                    matches[match][team]['kast'].append(stats[team][player][match]['KAST'])
+                    matches[match][team]['adr'].append(stats[team][player][match]['ADR'])
+                if "Match Score" not in matches[match]:
+                    matches[match]["Match Score"] = stats[team][player][match]['Score']
     for match in matches.keys():
-        teamname = list(matches[match]["Teams"].keys())
-        matches[match]["Stat Diff"]['delta acs'] = averager(matches[match]["Teams"][teamname[0]]['acs']) - averager(matches[match]["Teams"][teamname[1]]['acs'])
-        matches[match]["Stat Diff"]['delta kast'] = averager(matches[match]["Teams"][teamname[0]]['kast']) - averager(matches[match]["Teams"][teamname[1]]['kast'])
-        matches[match]["Stat Diff"]['delta k'] = averager(matches[match]["Teams"][teamname[0]]['k']) - averager(matches[match]["Teams"][teamname[1]]['k'])
-        matches[match]["Stat Diff"]['delta d'] = averager(matches[match]["Teams"][teamname[0]]['d']) - averager(matches[match]["Teams"][teamname[1]]['d'])
-        matches[match]["Stat Diff"]['delta a'] = averager(matches[match]["Teams"][teamname[0]]['a']) - averager(matches[match]["Teams"][teamname[1]]['a'])
-        matches[match]["Stat Diff"]['delta adr'] =  averager(matches[match]["Teams"][teamname[0]]['adr']) - averager(matches[match]["Teams"][teamname[1]]['adr'])
+        for team in list(matches[match].keys()):
+            if team in ["Match Score", "deltas"]:
+                continue
+            else:
+                if "deltas" not in matches[match]:
+                    matches[match]["deltas"] = {
+                        'delta acs': averager(matches[match][team]['acs']),
+                        'delta kast': averager(matches[match][team]['kast']),
+                        'delta adr': averager(matches[match][team]['adr']),
+                        'delta elo': 0
+                    }
+                else:
+                    matches[match]["deltas"]['delta acs'] -= averager(matches[match][team]['acs'])
+                    matches[match]["deltas"]['delta kast'] -= averager(matches[match][team]['kast'])
+                    matches[match]["deltas"]['delta adr'] -= averager(matches[match][team]['adr'])
+
+        elos = re.findall(r'\[(\d{3,4})\]', matches[match]["Match Score"])
+        if len(elos) == 2:
+            team1_elo = int(elos[0])
+            team2_elo = int(elos[1])
+            matches[match]["deltas"]['delta elo'] = team1_elo - team2_elo
+        else:
+            matches[match]["deltas"]['delta elo'] = 0
 
     with open(avg_json, 'w', encoding = 'utf-8') as f:
         json.dump(matches, f, indent = 4)
