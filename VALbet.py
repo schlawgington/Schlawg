@@ -93,9 +93,12 @@ def generateprobability(matchlink):
     z = b0 + b1*acs_diff + b2*kast_diff + b3*adr_diff + b4*elo_diff
     prob = sigmoid(z)
 
+    def kelly(prob, odds, bankroll):
+        return (prob*odds - 1) / (odds - 1)
+
     STATEMENT = f"{keys[0]}: {str(prob)}%\n{keys[1]}: {str(1-prob)}%"
 
     return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/473843/rex-regum-qeon-vs-paper-rex-champions-tour-2025-pacific-stage-1-lbf")
+x = generateprobability("https://www.vlr.gg/482508/team-liquid-vs-fnatic-champions-tour-2025-emea-stage-1-playoffs-ubsf")
 print(x)
