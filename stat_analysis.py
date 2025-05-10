@@ -22,14 +22,25 @@ stats = loadfile(stats_json)
 
 class logisticregressionmodel:
     def __init__(self):
-        self.b0 = 0.01
-        self.b1 = 0.01
-        self.b2 = 0.01
-        self.b3 = 0.01
-        self.b4 = 0.01
+        self.b0 = np.random.uniform(-0.1, 0.1)
+        self.b1 = np.random.uniform(-0.1, 0.1)
+        self.b2 = np.random.uniform(-0.1, 0.1)
+        self.b3 = np.random.uniform(-0.1, 0.1)
+        self.b4 = np.random.uniform(-0.1, 0.1)
 
     def probabilities_yay(self):
-        match_scores = [re.search(r'\d:\d', avg_stats[match]["Match Score"]).group(0) for match in avg_stats.keys()]
+        match_scores_unclip = []
+        teams = []
+        for team in stats.keys():
+            for player in stats[team].keys():
+                for match in avg_stats.keys():
+                    if match not in stats[team][player]:
+                        continue
+                    if stats[team][player][match]["Score"] in match_scores_unclip:
+                        continue
+                    match_scores_unclip.append(stats[team][player][match]["Score"])
+                    teams.append(stats[team][player][match]["Score"])
+        match_scores = [re.search(r'\d:\d', score).group() for score in match_scores_unclip]
         winloss = []
         for i in match_scores:
             splitlist = i.split(":")
@@ -38,16 +49,13 @@ class logisticregressionmodel:
             else:
                 winloss.append(0)
 
-        team = [avg_stats[match]["Match Score"] for match in avg_stats.keys()]
-
-        deltas = np.array(
-            [
-                [avg_stats[match]["deltas"]['delta acs'] for match in avg_stats.keys()],
-                [avg_stats[match]["deltas"]['delta kast'] for match in avg_stats.keys()],
-                [avg_stats[match]["deltas"]['delta adr'] for match in avg_stats.keys()],
-                [avg_stats[match]["deltas"]['delta elo'] for match in avg_stats.keys()]
-            ]
-        )
+        deltas = np.array([
+                [avg_stats[match]["deltas"]['delta_acs'],
+                avg_stats[match]["deltas"]['delta_kast'],
+                avg_stats[match]["deltas"]['delta_adr'],
+                avg_stats[match]["deltas"]['delta_elo']]
+                for match in avg_stats.keys()
+            ])
 
         def sigmoid(z):
             if z >= 0:
@@ -57,32 +65,26 @@ class logisticregressionmodel:
                 return exp_z / (1 + exp_z)
 
         for j in range(1000):
-            z = np.array(
-                [self.b0 + self.b1*deltas[0][i] + self.b2*deltas[1][i] + self.b3*deltas[2][i] + self.b4*deltas[3][i] for i in range(len(deltas[0]))]
-            )
+            z = self.b0 + np.dot(deltas, np.array([self.b1, self.b2, self.b3, self.b4]))
 
             unclippedprob = [sigmoid(i) for i in z]
             epsilon = 1e-10
             prob = np.clip(unclippedprob, epsilon, 1 - epsilon)
 
-            error = [prob[i] - winloss[i] for i in range(len(winloss))]
+            error = np.array(prob) - 1
+            grads = np.mean(error[:, None] * deltas, axis=0)
+            loss = np.mean(error)
 
-            acsloss = sum([error[i]*deltas[0][i] for i in range(len(winloss))]) / len(winloss)
-            kastloss = sum([error[i]*deltas[1][i] for i in range(len(winloss))]) / len(winloss)
-            adrloss = sum([error[i]*deltas[2][i] for i in range(len(winloss))]) / len(winloss)
-            eloloss = sum([error[i]*deltas[3][i] for i in range(len(winloss))]) / len(winloss)
-            loss = sum(error) / len(winloss)
+            learn_rate = 0.0001
+            self.b0 -= learn_rate*loss
+            self.b1 -= learn_rate*grads[0]
+            self.b2 -= learn_rate*grads[1]
+            self.b3 -= learn_rate*grads[2]
+            self.b4 -= learn_rate*grads[3]
 
-            learn_rate = 0.001
-            self.b0 = self.b0 - learn_rate*loss
-            self.b1 = self.b1 - learn_rate*acsloss
-            self.b2 = self.b2 - learn_rate*kastloss
-            self.b3 = self.b3 - learn_rate*adrloss
-            self.b4 = self.b4 - learn_rate*eloloss
+        pretty = [f"{teams[i]}: {100*prob[i]:.2f}% to {100*(1-prob[i]):.2f}" for i in range(len(teams))]
 
-        pretty = [f"{team[i]}: {100*prob[i]:.2f}% to {100*(1-prob[i]):.2f}" for i in range(len(team))]
-
-        return pretty, self.b0, self.b1, self.b2, self.b3, self.b4
+        return pretty
     
 log = logisticregressionmodel()
 coeff = log.probabilities_yay()

@@ -22,10 +22,11 @@ tbd_json = 'tbd.json'
 stats = loadfile(stat_json)
 tbd = loadfile(tbd_json)
 
-b0 = 0.0020489347393461647
-b1 = 0.07228577070993243
-b2 = 0.01969340959882133
-b3 = 0.05427056700622877
+b0 = 0.07968364919098547
+b1 = -0.01538007314636117
+b2 = -0.05652877597543738
+b3 = 0.05407970916940718
+b4 = -0.0031161344386801447
 
 def generateprobability(matchlink):
     if 'https://www.vlr.gg/' in matchlink:
@@ -42,15 +43,16 @@ def generateprobability(matchlink):
             counter = 0
             for team in stats.keys():
                 team_name = str(team)
-                if player not in stats[team]:
+                if player not in stats[team]['Players']:
                     continue
-                for match in stats[team][player].keys():
-                    score_string = stats[team][player][match]["Score"]
-                    team_elo = int(re.search(r'\d{3,4}', team).group(0))
+                for match in stats[team]['Players'][player].keys():
+                    score_string = stats[team]['Players'][player][match]["Score"]
+                    team_elo_thing = re.search(r'\d{3,4}', team)
+                    team_elo = int(team_elo_thing.group()) if team_elo_thing is not None else 0
 
-                    sum_acs += stats[team][player][match]['ACS']
-                    sum_kast += stats[team][player][match]['KAST']
-                    sum_adr += stats[team][player][match]['ADR']
+                    sum_acs += stats[team]['Players'][player][match]['ACS']
+                    sum_kast += stats[team]['Players'][player][match]['KAST']
+                    sum_adr += stats[team]['Players'][player][match]['ADR']
                     counter += 1
                 if team_name not in team_avg:
                     team_avg[team_name] = {
@@ -86,14 +88,14 @@ def generateprobability(matchlink):
     acs_diff = team_stat[keys[0]]['avg_acs'] - team_stat[keys[1]]['avg_acs']
     kast_diff = team_stat[keys[0]]['avg_kast'] - team_stat[keys[1]]['avg_kast']
     adr_diff = team_stat[keys[0]]['avg_adr'] - team_stat[keys[1]]['avg_adr']
-    elo_diff = team_stat[keys[0]]['elo'] - team_stat[keys[1]]['elo']
+    elo_diff = team_stat[keys[0]]['elo'] - team_stat[keys[1]]['elo'] if team_stat[keys[0]]['elo'] or team_stat[keys[1]]['elo'] != 0 else 0
 
     z = b0 + b1*acs_diff + b2*kast_diff + b3*adr_diff + b4*elo_diff
     prob = sigmoid(z)
 
     STATEMENT = f"{keys[0]}: {str(prob)}%\n{keys[1]}: {str(1-prob)}%"
 
-    return team_stat
+    return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/485377/wolves-esports-vs-tyloo-china-evolution-series-act-2-x-asian-champions-league-qf")
+x = generateprobability("https://www.vlr.gg/473843/rex-regum-qeon-vs-paper-rex-champions-tour-2025-pacific-stage-1-lbf")
 print(x)
