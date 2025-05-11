@@ -32,14 +32,14 @@ class logisticregressionmodel:
         match_scores_unclip = []
         teams = []
         for team in stats.keys():
-            for player in stats[team].keys():
+            for player in stats[team]['Players'].keys():
                 for match in avg_stats.keys():
-                    if match not in stats[team][player]:
+                    if match not in stats[team]['Players'][player]:
                         continue
-                    if stats[team][player][match]["Score"] in match_scores_unclip:
+                    if stats[team]['Players'][player][match]["Score"] in match_scores_unclip:
                         continue
-                    match_scores_unclip.append(stats[team][player][match]["Score"])
-                    teams.append(stats[team][player][match]["Score"])
+                    match_scores_unclip.append(stats[team]['Players'][player][match]["Score"])
+                    teams.append(stats[team]['Players'][player][match]["Score"])
         match_scores = [re.search(r'\d:\d', score).group() for score in match_scores_unclip]
         winloss = []
         for i in match_scores:

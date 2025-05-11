@@ -6,6 +6,7 @@ import hashlib
 import re
 from collections import defaultdict
 import numpy as np
+from datetime import datetime
 
 os.makedirs('cache', exist_ok = True)
 os.makedirs('schedule', exist_ok = True)
@@ -76,9 +77,7 @@ stats = loadfile(stat_json)
 tbd = loadfile(tbd_json)
 avg_stats = loadfile(avg_json)
 
-if stats:
-    print("Stats loaded")
-else:
+def get_history_links():
     results = []
     for i in range(1,25):
         if i == 1:
@@ -95,7 +94,14 @@ else:
                 if '/matches' in href or '/results' in href:
                     continue
                 links.append(href)
+    return links
+
+links = get_history_links()
+
+def create_match_history(links):
     team_stats = {}
+    if isinstance(links, list) is False:
+        links = [links]
     for i in links:
         soup = BeautifulSoup(geturl("https://www.vlr.gg" + i), 'html.parser')
         
@@ -153,12 +159,9 @@ else:
     with open(stat_json, 'w', encoding = 'utf-8') as f:
         json.dump(team_stats, f, indent = 4)
 
-if tbd:
-    print("Scheduled matches loaded")
-else:
+def get_schedule_links():
     schedule = [BeautifulSoup(getmatch("https://www.vlr.gg/matches"), 'html.parser'), BeautifulSoup(getmatch("https://www.vlr.gg/matches/?page=2"), 'html.parser')]
     schedulelinks = []
-    tbd_teams = {}
     for card in schedule:
         cardclass = card.find_all('div', class_ = 'wf-card')
         for links in cardclass:
@@ -167,10 +170,18 @@ else:
                 if '/matches' in link.get('href') or 'tbd' in link.get('href'):
                     continue
                 schedulelinks.append(link.get('href'))
-    for link in schedulelinks:
+    return schedulelinks
+    
+schedule_links = get_schedule_links()
+
+def create_schedule(schedule_links):
+    tbd_teams = {}
+    for link in schedule_links:
         soup2 = BeautifulSoup(getmatch("https://www.vlr.gg" + link), 'html.parser')
         table = soup2.find_all('table', class_ = 'wf-table-inset mod-overview')
         matchname = hashlib.md5(link.encode('utf-8')).hexdigest()
+        match_datetime = soup2.find('div', class_ = 'match-header-date')
+        date = ', '.join([match_datetime.find_all('div', class_ = 'moment-tz-convert')[0].text.strip(), match_datetime.find_all('div', class_ = 'moment-tz-convert')[1].text.strip()])
         players = []
         for body in table:
             names = body.find_all('td', class_ = 'mod-player')
@@ -179,13 +190,15 @@ else:
                     break
                 player_name = name.text.strip().replace("\n", "").replace("\t", "")
                 players.append(player_name)
-        tbd_teams[matchname] = players
+        tbd_teams[matchname] = {
+            'Players': players,
+            'Time': date,
+            'Link': link
+        }
     with open(tbd_json, 'w', encoding = 'utf-8') as f:
         json.dump(tbd_teams, f, indent = 4)
 
-if avg_stats:
-    print("Have stats")
-else:
+def create_avgs():
     matches = defaultdict(lambda: defaultdict(dict))
 
     for team in stats.keys():
@@ -265,3 +278,28 @@ else:
 
     with open(avg_json, 'w', encoding = 'utf-8') as f:
         json.dump(matches, f, indent = 4)
+
+def cache_update():
+    now = datetime.now()
+    for match in tbd.keys():
+        match_link = tbd[match]["Link"]
+        
+        match_time_str = tbd[match]['Time']
+        cleaned_time_str = re.sub(r'(\d{1,2})(st|nd|rd|th)', r'\1', match_time_str).rsplit(' ', 1)[0]
+        format_str = "%A, %B %d, %I:%M %p"
+        match_time = datetime.strptime(cleaned_time_str, format_str)
+        
+        if match_time < now: # fix this cause for some reason it doesnt work for the chinese
+            breakpoint()
+            source = os.path.join('schedule', match)
+            destination = os.path.join('cache', match)
+            if os.path.exists(source):
+                os.shutil(source, destination)
+            
+            tbd.pop(match, None)
+            with open (tbd_json, 'w', encoding = 'utf-8') as f:
+                json.dump(tbd, f, indent = 4)
+
+            create_match_history(match_link)
+
+create_schedule(schedule_links)

@@ -100,5 +100,5 @@ def generateprobability(matchlink):
 
     return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/482508/team-liquid-vs-fnatic-champions-tour-2025-emea-stage-1-playoffs-ubsf")
+x = generateprobability("https://www.vlr.gg/475214/fn-pocheon-vs-drx-academy-wdg-challengers-league-2025-korea-stage-2-w4")
 print(x)
