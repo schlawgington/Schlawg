@@ -6,7 +6,6 @@ import hashlib
 from collections import defaultdict
 import re
 import numpy as np
-from fuzzywuzzy import fuzz
 
 def loadfile(file):
     if os.path.exists(file):
@@ -34,7 +33,7 @@ def generateprobability(matchlink):
         matchhash = hashlib.md5(matchinfo.encode('utf-8')).hexdigest()
 
     def get_team_stats(matchhash):
-        playerlist = tbd[matchhash]
+        playerlist = tbd[matchhash]['Players']
         team_avg = {}
         for player in playerlist:
             sum_acs = 0
@@ -92,13 +91,29 @@ def generateprobability(matchlink):
 
     z = b0 + b1*acs_diff + b2*kast_diff + b3*adr_diff + b4*elo_diff
     prob = sigmoid(z)
+    prob2 = 1 - prob
 
-    def kelly(prob, odds, bankroll):
-        return (prob*odds - 1) / (odds - 1)
+    def kelly(prob, prob2, odd1, odd2, bankroll):
+        kelly1 = ((prob*odd1 - 1) / (odd1 - 1)) * bankroll
+        kelly2 = ((prob2*odd2 - 1) / (odd2 - 1)) * bankroll
+        if kelly1 <= 0:
+            kelly1 = 'Negative expected value, no bet'
+        else:
+            kelly1 = '$' + str(round(kelly1, 2))
+        if kelly2 <= 0:
+            kelly2 = 'Negative expected value, no bet'
+        else:
+            kelly2 = '$' + str(round(kelly2, 2))
+        return [kelly1, kelly2]
 
-    STATEMENT = f"{keys[0]}: {str(prob)}%\n{keys[1]}: {str(1-prob)}%"
+    x = kelly(prob, prob2, 1.2, 4, 9.79)
+
+    per1 = prob*100
+    per2 = prob2*100
+
+    STATEMENT = f"{keys[0]}: {per1:.3}% Bet: {x[0]}\n{keys[1]}: {per2:.3}% Bet: {x[1]}"
 
     return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/475214/fn-pocheon-vs-drx-academy-wdg-challengers-league-2025-korea-stage-2-w4")
+x = generateprobability("https://www.vlr.gg/475213/slt-seongnam-vs-sherpa-wdg-challengers-league-2025-korea-stage-2-w4")
 print(x)
