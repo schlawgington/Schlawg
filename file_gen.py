@@ -1,4 +1,5 @@
 import os
+import shutil
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -50,7 +51,7 @@ def loadfile(file):
         with open(file, 'r', encoding = 'utf-8') as f:
             raw_content = json.load(f)
             if not raw_content:
-                return none
+                return None
             return raw_content
     else:
         return None
@@ -79,10 +80,8 @@ avg_stats = loadfile(avg_json)
 
 def get_history_links():
     results = []
-    for i in range(1,25):
-        if i == 1:
-            results.append(BeautifulSoup(geturl("https://www.vlr.gg/matches/results/"), 'html.parser'))
-        results.append(BeautifulSoup(geturl("https://www.vlr.gg/matches/results/?page=" + str(i)), 'html.parser'))
+    for i in range(1,3):
+        results.append(BeautifulSoup(geturl(f"https://www.vlr.gg/matches/results/?page={i}"), 'html.parser'))
     links = []
     for k in results:
         bigclass = k.find('div', class_ = 'col-container')
@@ -103,7 +102,10 @@ def create_match_history(links):
     if isinstance(links, list) is False:
         links = [links]
     for i in links:
-        soup = BeautifulSoup(geturl("https://www.vlr.gg" + i), 'html.parser')
+        if "https://www.vlr.gg" in i:
+            i = i.replace("https://www.vlr.gg", '')
+        i = "https://www.vlr.gg" + i
+        soup = BeautifulSoup(geturl(i), 'html.parser')
         
         match_name = hashlib.md5(i.encode('utf-8')).hexdigest()
         match_data = soup.find('div', class_ = 'vm-stats-game mod-active')
@@ -112,10 +114,10 @@ def create_match_history(links):
         Score_html = soup.find('div', class_ = 'match-header-vs')
 
         team1_html = Score_html.find('div', class_ = 'match-header-link-name mod-1')
-        team1_list = [i.text.strip() for i in team1_html if '' not in i]
+        team1_list = [j.text.strip() for j in team1_html if '' not in j]
 
         team2_html = Score_html.find('div', class_ = 'match-header-link-name mod-2')
-        team2_list = [i.text.strip() for i in team2_html if '' not in i]
+        team2_list = [j.text.strip() for j in team2_html if '' not in j]
 
         if Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-winner') is None or Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-loser') is None:
             continue
@@ -177,7 +179,8 @@ schedule_links = get_schedule_links()
 def create_schedule(schedule_links):
     tbd_teams = {}
     for link in schedule_links:
-        soup2 = BeautifulSoup(getmatch("https://www.vlr.gg" + link), 'html.parser')
+        link = "https://www.vlr.gg" + link
+        soup2 = BeautifulSoup(getmatch(link), 'html.parser')
         table = soup2.find_all('table', class_ = 'wf-table-inset mod-overview')
         matchname = hashlib.md5(link.encode('utf-8')).hexdigest()
         match_datetime = soup2.find('div', class_ = 'match-header-date')
@@ -281,20 +284,20 @@ def create_avgs():
 
 def cache_update():
     now = datetime.now()
-    for match in tbd.keys():
+    for match in list(tbd.keys()):
         match_link = tbd[match]["Link"]
         
         match_time_str = tbd[match]['Time']
         cleaned_time_str = re.sub(r'(\d{1,2})(st|nd|rd|th)', r'\1', match_time_str).rsplit(' ', 1)[0]
         format_str = "%A, %B %d, %I:%M %p"
         match_time = datetime.strptime(cleaned_time_str, format_str)
+        match_time = match_time.replace(year=now.year)
         
-        if match_time < now: # fix this cause for some reason it doesnt work for the chinese
-            breakpoint()
-            source = os.path.join('schedule', match)
-            destination = os.path.join('cache', match)
-            if os.path.exists(source):
-                os.shutil(source, destination)
+        if match_time < now:
+            schedule = os.path.join('schedule', match)
+            history_cache = os.path.join('cache', match)
+            if os.path.exists(schedule):
+                shutil.move(schedule, history_cache)
             
             tbd.pop(match, None)
             with open (tbd_json, 'w', encoding = 'utf-8') as f:
@@ -302,4 +305,6 @@ def cache_update():
 
             create_match_history(match_link)
 
+create_match_history(links)
 create_schedule(schedule_links)
+#cache_update()

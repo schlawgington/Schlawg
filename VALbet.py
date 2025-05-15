@@ -106,7 +106,7 @@ def generateprobability(matchlink):
             kelly2 = '$' + str(round(kelly2, 2))
         return [kelly1, kelly2]
 
-    x = kelly(prob, prob2, 2.8, 1.38, 9.79)
+    x = kelly(prob, prob2, 1.5, 2.4, 8.47)
 
     per1 = prob*100
     per2 = prob2*100
@@ -115,5 +115,5 @@ def generateprobability(matchlink):
 
     return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/481654/bilibili-gaming-vs-drx-hero-esports-asian-champions-league-2025-lr2")
+x = generateprobability("https://www.vlr.gg/481653/trace-esports-vs-zeta-division-hero-esports-asian-champions-league-2025-lr1")
 print(x)
