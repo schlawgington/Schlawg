@@ -1,5 +1,4 @@
 import os
-import shutil
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -8,6 +7,7 @@ import re
 from collections import defaultdict
 import numpy as np
 from datetime import datetime
+import shutil
 
 os.makedirs('cache', exist_ok = True)
 os.makedirs('schedule', exist_ok = True)
@@ -16,13 +16,13 @@ stat_json = 'stat.json'
 tbd_json = 'tbd.json'
 avg_json = 'avg.json'
 
-def geturl(url):
+def geturl(url, force_refresh = False):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     }
     hash = hashlib.md5(url.encode('utf-8')).hexdigest()
     file = os.path.join('cache', hash)
-    if os.path.exists(file):
+    if os.path.exists(file) and not force_refresh:
         with open(file, 'r', encoding = 'utf-8') as f:
             contents = f.read()
         return contents
@@ -158,7 +158,10 @@ def create_match_history(links):
                     'ADR': averager(ADR),
                     'Score': f"{team1_list[0]}{team1_list[1]} {Score[0]}:{Score[1]} {team2_list[0]}{team2_list[1]}"
                 }
-    with open(stat_json, 'w', encoding = 'utf-8') as f:
+    return team_stats
+
+def make_stat_json(team_stats):
+    with open (stat_json, 'w', encoding = 'utf-8') as f:
         json.dump(team_stats, f, indent = 4)
 
 def get_schedule_links():
@@ -284,6 +287,7 @@ def create_avgs():
 
 def cache_update():
     now = datetime.now()
+    update_matches_links = []
     for match in list(tbd.keys()):
         match_link = tbd[match]["Link"]
         
@@ -294,17 +298,34 @@ def cache_update():
         match_time = match_time.replace(year=now.year)
         
         if match_time < now:
-            schedule = os.path.join('schedule', match)
-            history_cache = os.path.join('cache', match)
-            if os.path.exists(schedule):
-                shutil.move(schedule, history_cache)
-            
-            tbd.pop(match, None)
-            with open (tbd_json, 'w', encoding = 'utf-8') as f:
-                json.dump(tbd, f, indent = 4)
+            update_matches_links.append(match_link)
+            schedule_match = os.path.join('schedule', match)
+            if os.path.exists(schedule_match):
+                os.remove(schedule_match)
+    
+    for url in update_matches_links:
+        geturl(url, force_refresh=True)
+    
+    update_match = create_match_history(update_matches_links)
+    stats.update(update_match)
+    make_stat_json(stats)
 
-            create_match_history(match_link)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+    new_sched_pages = [BeautifulSoup(requests.get("https://www.vlr.gg/matches", headers = headers).text, 'html.parser'), BeautifulSoup(requests.get("https://www.vlr.gg/matches/?page=2", headers = headers).text, 'html.parser')]
+    
+    new_links = []
+    for page in new_sched_pages:
+        cardclass = page.find_all('div', class_ = 'wf-card')
+        for links in cardclass:
+            linkclass = links.find_all('a', href = True)
+            for link in linkclass:
+                if '/matches' in link.get('href') or 'tbd' in link.get('href'):
+                    continue
+                new_links.append(link.get('href'))
+    create_schedule(new_links)
 
-create_match_history(links)
-create_schedule(schedule_links)
-#cache_update()
+#create_match_history(links)
+#create_schedule(schedule_links)
+cache_update()
