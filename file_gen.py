@@ -80,7 +80,7 @@ avg_stats = loadfile(avg_json)
 
 def get_history_links():
     results = []
-    for i in range(1,3):
+    for i in range(1,25):
         results.append(BeautifulSoup(geturl(f"https://www.vlr.gg/matches/results/?page={i}"), 'html.parser'))
     links = []
     for k in results:
@@ -224,7 +224,7 @@ def create_avgs():
 
         for match in all_matches:
             if match not in matches:
-                matches[match]: {
+                matches[match] = {
                     'teams': {},
                 }
         
@@ -326,6 +326,7 @@ def cache_update():
                 new_links.append(link.get('href'))
     create_schedule(new_links)
 
-#create_match_history(links)
-#create_schedule(schedule_links)
-cache_update()
+x = create_match_history(links)
+make_stat_json(x)
+create_schedule(schedule_links)
+#cache_update()

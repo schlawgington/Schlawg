@@ -28,10 +28,9 @@ b3 = 0.05407970916940718
 b4 = -0.0031161344386801447
 
 def generateprobability(matchlink):
-    if 'https://www.vlr.gg/' in matchlink:
-        matchinfo = matchlink.replace('https://www.vlr.gg', '')
-        matchhash = hashlib.md5(matchinfo.encode('utf-8')).hexdigest()
-
+    
+    matchhash = hashlib.md5(matchlink.encode('utf-8')).hexdigest()
+    
     def get_team_stats(matchhash):
         playerlist = tbd[matchhash]['Players']
         team_avg = {}
@@ -106,7 +105,7 @@ def generateprobability(matchlink):
             kelly2 = '$' + str(round(kelly2, 2))
         return [kelly1, kelly2]
 
-    x = kelly(prob, prob2, 1.5, 2.4, 8.47)
+    x = kelly(prob, prob2, 4.8, 1.15, 13.49)
 
     per1 = prob*100
     per2 = prob2*100
@@ -115,5 +114,5 @@ def generateprobability(matchlink):
 
     return STATEMENT
 
-x = generateprobability("https://www.vlr.gg/481653/trace-esports-vs-zeta-division-hero-esports-asian-champions-league-2025-lr1")
+x = generateprobability("https://www.vlr.gg/488010/furia-vs-leviat-n-esports-world-cup-2025-lr1")
 print(x)
