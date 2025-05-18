@@ -8,13 +8,22 @@ from collections import defaultdict
 import numpy as np
 from datetime import datetime
 import shutil
+import math
+import time
+
+start = time.time()
 
 os.makedirs('cache', exist_ok = True)
 os.makedirs('schedule', exist_ok = True)
 
 stat_json = 'stat.json'
 tbd_json = 'tbd.json'
-avg_json = 'avg.json'
+match_json = 'match.json'
+team_json = 'team.json'
+
+def make_json(info, file):
+    with open (file, 'w', encoding = 'utf-8') as f:
+        json.dump(info, f, indent = 4)
 
 def geturl(url, force_refresh = False):
     headers = {
@@ -56,6 +65,11 @@ def loadfile(file):
     else:
         return None
 
+stats = loadfile(stat_json)
+tbd = loadfile(tbd_json)
+match_history = loadfile(match_json)
+elo = loadfile(team_json)
+
 def averager(strlist):
     x = []
     for k in strlist:
@@ -74,95 +88,181 @@ def averager(strlist):
     y = sum(x) / len(x)
     return y
 
-stats = loadfile(stat_json)
-tbd = loadfile(tbd_json)
-avg_stats = loadfile(avg_json)
+def prob(r1, r2):
+    return 1.0 / (1 + math.pow(10, (r1 - r2) / 400))
 
-def get_history_links():
-    results = []
-    for i in range(1,3):
-        results.append(BeautifulSoup(geturl(f"https://www.vlr.gg/matches/results/?page={i}"), 'html.parser'))
-    links = []
-    for k in results:
-        bigclass = k.find('div', class_ = 'col-container')
-        smallerclass = k.find_all('div', class_= 'wf-card')
-        for i in smallerclass:
-            x = i.find_all('a', href = True)
-            for j in x:
-                href = j.get('href')
-                if '/matches' in href or '/results' in href:
-                    continue
-                links.append(href)
-    return links
+def get_history_links(max_pages = 33):
+    links = set()
+    for i in range(1, max_pages):
+        soup = BeautifulSoup(geturl(f"https://www.vlr.gg/matches/results/?page={i}"), 'lxml')
+        matches = soup.find_all('a', href=True)        
+        for match in matches:
+            href = match.get('href')
+            if re.match(r'^/\d+/', href):
+                links.add(href)
+    return list(links)
 
-links = get_history_links()
+#links = get_history_links()
 
-def create_match_history(links):
+def create_player_history(links):
     team_stats = {}
     if isinstance(links, list) is False:
         links = [links]
+    
     for i in links:
+        
         if "https://www.vlr.gg" in i:
             i = i.replace("https://www.vlr.gg", '')
         i = "https://www.vlr.gg" + i
-        soup = BeautifulSoup(geturl(i), 'html.parser')
+        
+        soup = BeautifulSoup(geturl(i), 'lxml')
         
         match_name = hashlib.md5(i.encode('utf-8')).hexdigest()
-        match_data = soup.find('div', class_ = 'vm-stats-game mod-active')
+        match_data = soup.find('div', class_ = 'vm-stats')
+
         team_data = match_data.find_all('tbody')
 
         Score_html = soup.find('div', class_ = 'match-header-vs')
 
         team1_html = Score_html.find('div', class_ = 'match-header-link-name mod-1')
-        team1_list = [j.text.strip() for j in team1_html if '' not in j]
+        team1_list = [j.text.replace('\n', '').replace('\t', '') for j in team1_html if '' not in j]
 
         team2_html = Score_html.find('div', class_ = 'match-header-link-name mod-2')
-        team2_list = [j.text.strip() for j in team2_html if '' not in j]
+        team2_list = [j.text.replace('\n', '').replace('\t', '') for j in team2_html if '' not in j]
 
         if Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-winner') is None or Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-loser') is None:
             continue
         Score = [Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-winner').text.strip(), Score_html.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').find('span', class_ = 'match-header-vs-score-loser').text.strip()]
 
         teamnames = [team1_list[0], team2_list[0]]
-        teamelo = [team1_list[1], team2_list[1]]
 
-        for teamname, elo, team in zip(teamnames, teamelo, team_data):
+        for teamname, team in zip(teamnames,  team_data):
             player_row = team.find_all('tr')
 
             if teamname not in team_stats:
-                team_stats[teamname] = {
-                    'ELO': None,
-                    'Players': {}
-                }
-
-            team_stats[teamname]['ELO'] = elo
+                team_stats[teamname] = {}
 
             for row in player_row:
                 name_td = row.find('td' , class_ = 'mod-player')
                 name = name_td.text.replace('\n', '').replace('\t', '')
 
                 stat_tds = row.find_all('td')
+                
                 ACS = stat_tds[3].text.strip().replace('\n', ',').split(',')
                 KAST = stat_tds[8].text.strip().replace('\n', ',').split(',')
                 ADR = stat_tds[9].text.strip().replace('\n', ',').split(',')
 
-                if name not in team_stats[teamname]['Players']:
-                    team_stats[teamname]['Players'][name] = {}
+                if name not in team_stats[teamname]:
+                    team_stats[teamname][name] = {}
 
-                if match_name not in team_stats[teamname]['Players'][name]:
-                    team_stats[teamname]['Players'][name][match_name] = {}
-
-                team_stats[teamname]['Players'][name][match_name] = {
+                team_stats[teamname][name] = {
                     'ACS': averager(ACS),
                     'KAST': averager(KAST),
-                    'ADR': averager(ADR),
-                    'Score': f"{team1_list[0]}{team1_list[1]} {Score[0]}:{Score[1]} {team2_list[0]}{team2_list[1]}"
+                    'ADR': averager(ADR)
                 }
+
     return team_stats
 
-def make_stat_json(team_stats):
-    with open (stat_json, 'w', encoding = 'utf-8') as f:
-        json.dump(team_stats, f, indent = 4)
+#player_history = create_player_history(links)
+#make_json(player_history, stat_json)
+
+def create_match_history(links):
+    match_dict = {}
+    
+    if isinstance(links, list) is False:
+        links = [links]
+    
+    for i in links:
+        
+        if "https://www.vlr.gg" in i:
+            i = i.replace("https://www.vlr.gg", '')
+        i = "https://www.vlr.gg" + i
+        
+        soup = BeautifulSoup(geturl(i), 'lxml')
+        
+        match_name = hashlib.md5(i.encode('utf-8')).hexdigest()
+        match_data = soup.find('div', class_ = 'vm-stats')
+
+        match_header_score_unclipped = soup.find('div', class_ = 'match-header-vs-score').find('div', class_ = 'match-header-vs-score').text.replace('\n', '').replace('\t', '')
+        match_header_score = re.match(r'\d:\d', match_header_score_unclipped).group()
+
+        match_header_team_names = soup.find_all('div', class_ = 'wf-title-med')
+        
+        match_string = f'{match_header_team_names[0].text.replace('\n', '').replace('\t', '')} {match_header_score} {match_header_team_names[1].text.replace('\n', '').replace('\t', '')}'
+        
+        big_match_data = match_data.find_all('div', class_ = 'vm-stats-game-header')
+        
+        map_strings = []
+        team1_tot_rounds = 0
+        team2_tot_rounds = 0
+        
+        for maps in big_match_data:
+            team1_match_data = maps.find('div', class_ = 'team')
+            team1_score = team1_match_data.find('div', class_ = 'score').text.strip()
+            team1_tot_rounds += int(team1_score)
+
+            map_name = maps.find('div', class_ = 'map').text.strip().split('\t', 1)[0]
+
+            team2_match_data = maps.find('div', class_ = 'team mod-right')
+            team2_score = team2_match_data.find('div', class_ = 'score').text.strip()
+            team2_tot_rounds += int(team2_score)
+
+            string = f'{map_name}: {team1_score}-{team2_score}'
+            map_strings.append(string)
+
+        
+        if match_name not in match_dict:
+            match_dict[match_name] = {
+                'Match Score': match_string,
+                'Map Scores': map_strings,
+                'Total Round diff': f'{team1_tot_rounds} - {team2_tot_rounds} = {team1_tot_rounds - team2_tot_rounds}'
+            }
+    return match_dict
+
+#match_history = create_match_history(links)
+#make_json(match_history, match_json)
+
+def create_team_rankings():
+    teams = {}
+    def get_elo(team_name): 
+        return teams.setdefault(team_name, 1500) 
+    
+    for team in stats.keys():
+        if team not in teams:
+            teams[team] = 1500
+    for match in match_history.keys():
+        match_team_and_score = match_history[match]['Match Score']
+        match_info = re.search(r'^(.*?)\s+(\d:\d)\s+(.*)$', match_team_and_score)
+
+        if not match_info:
+            continue
+        
+        score = match_info.group(2).split(':')
+        map_win_diff = int(score[0]) - int(score[1])
+        round_win_diff = int(match_history[match]['Total Round diff'].rsplit(' ', 1)[1])
+        
+        team1_name = match_info.group(1)
+        team2_name = match_info.group(3)
+
+        team1_elo = get_elo(team1_name)
+        team2_elo = get_elo(team2_name)
+
+        prob_team1_win = prob(team2_elo, team1_elo)
+        prob_team2_win = prob(team1_elo, team2_elo)
+        
+        K = 30 + abs(round_win_diff)
+        if map_win_diff > 0:
+            teams[team1_name] += round(K*(1-prob_team1_win), 1)
+            teams[team2_name] += round(K*(0-prob_team2_win), 1)
+        else:
+            teams[team1_name] += round(K*(0-prob_team1_win), 1)
+            teams[team2_name] += round(K*(1-prob_team2_win), 1)
+
+    return dict(sorted(teams.items(), key=lambda x: x[1], reverse=True))
+
+#teams = create_team_rankings()
+#make_json(teams, team_json)
+    
 
 def get_schedule_links():
     schedule = [BeautifulSoup(getmatch("https://www.vlr.gg/matches"), 'html.parser'), BeautifulSoup(getmatch("https://www.vlr.gg/matches/?page=2"), 'html.parser')]
@@ -181,14 +281,24 @@ schedule_links = get_schedule_links()
 
 def create_schedule(schedule_links):
     tbd_teams = {}
+    
     for link in schedule_links:
         link = "https://www.vlr.gg" + link
-        soup2 = BeautifulSoup(getmatch(link), 'html.parser')
+        
+        soup2 = BeautifulSoup(getmatch(link), 'lxml')
+        teamnames = soup2.find_all('div', 'wf-title-med')
+        
+        team1 = teamnames[0].text.replace("\n", "").replace("\t", "")
+        team2 = teamnames[1].text.replace("\n", "").replace("\t", "")
+
         table = soup2.find_all('table', class_ = 'wf-table-inset mod-overview')
+        
         matchname = hashlib.md5(link.encode('utf-8')).hexdigest()
         match_datetime = soup2.find('div', class_ = 'match-header-date')
         date = ', '.join([match_datetime.find_all('div', class_ = 'moment-tz-convert')[0].text.strip(), match_datetime.find_all('div', class_ = 'moment-tz-convert')[1].text.strip()])
+        
         players = []
+        
         for body in table:
             names = body.find_all('td', class_ = 'mod-player')
             for name in names:
@@ -196,94 +306,19 @@ def create_schedule(schedule_links):
                     break
                 player_name = name.text.strip().replace("\n", "").replace("\t", "")
                 players.append(player_name)
-        tbd_teams[matchname] = {
-            'Players': players,
-            'Time': date,
-            'Link': link
-        }
+        
+        if matchname not in tbd_teams:
+            tbd_teams[matchname] = {
+                team1: round(100*prob(elo[team2], elo[team1]), 2),
+                team2: round(100*prob(elo[team1], elo[team2]), 2),
+                'Players': players,
+                'Time': date,
+                'Link': link
+            }
     with open(tbd_json, 'w', encoding = 'utf-8') as f:
         json.dump(tbd_teams, f, indent = 4)
 
-def create_avgs():
-    matches = defaultdict(lambda: defaultdict(dict))
-
-    for team in stats.keys():
-        players = list(stats[team]['Players'].keys())
-        for player in players:
-            if len(player.rsplit(" ", 1)) == 2:
-                teamname = player.rsplit(" ", 1)[1]
-                break
-            else:
-                continue
-       
-        elo = int(re.search(r'\d+', stats[team]['ELO']).group()) if stats[team]['ELO'] else 0
-
-        all_matches= set()
-        for player in stats[team]['Players'].keys():
-            all_matches.update(stats[team]['Players'][player].keys())
-
-        for match in all_matches:
-            if match not in matches:
-                matches[match]: {
-                    'teams': {},
-                }
-        
-            if teamname not in matches[match]['teams']:
-                matches[match]['teams'][teamname] = {
-                    'acs': [],
-                    'kast': [],
-                    'adr': [],
-                    'elo': elo
-                }
-
-            for player in stats[team]['Players'].keys():
-                if match in stats[team]['Players'][player]:
-                    if len(player.rsplit(" ", 1)) != 2:
-                        continue
-                    if len(matches[match]['teams'][teamname]['acs']) < 5:
-                        matches[match]['teams'][teamname]['acs'].append(stats[team]['Players'][player][match]['ACS'])
-                        matches[match]['teams'][teamname]['kast'].append(stats[team]['Players'][player][match]['KAST'])
-                        matches[match]['teams'][teamname]['adr'].append(stats[team]['Players'][player][match]['ADR'])
-
-    for match in matches.keys():
-        teamnames = list(matches[match]['teams'].keys())
-        if len(teamnames) != 2:
-            continue
-        team1 = teamnames[0]
-        team2 = teamnames[1]
-
-        team1_acs = averager(matches[match]['teams'][team1]['acs'])
-        team2_acs = averager(matches[match]['teams'][team2]['acs'])
-
-        team1_kast = averager(matches[match]['teams'][team1]['kast'])
-        team2_kast = averager(matches[match]['teams'][team2]['kast'])
-
-        team1_adr = averager(matches[match]['teams'][team1]['adr'])
-        team2_adr = averager(matches[match]['teams'][team2]['adr'])
-
-        team1_elo = int(matches[match]['teams'][team1]['elo'])
-        team2_elo = int(matches[match]['teams'][team2]['elo'])
-
-        matches[match]['deltas'] = {
-            'delta_acs': team1_acs - team2_acs,
-            'delta_kast': team1_kast - team2_kast,
-            'delta_adr': team1_adr - team2_adr,
-            'delta_elo': team1_elo - team2_elo if team1_elo != 0 and team2_elo != 0 else 0
-        }
-
-    to_delete = []
-    for match in matches:
-        if len(matches[match]['teams']) < 2:
-            to_delete.append(match)
-        elif 'deltas' not in matches[match]:
-            to_delete.append(match)
-        elif matches[match]['deltas']['delta_acs'] == 0:
-            to_delete.append(match)
-    for match in to_delete:
-        del matches[match]
-
-    with open(avg_json, 'w', encoding = 'utf-8') as f:
-        json.dump(matches, f, indent = 4)
+create_schedule(schedule_links)
 
 def cache_update():
     now = datetime.now()
@@ -307,13 +342,18 @@ def cache_update():
         geturl(url, force_refresh=True)
     
     update_match = create_match_history(update_matches_links)
-    stats.update(update_match)
-    make_stat_json(stats)
+    update_player = create_player_history(update_matches_links)
+
+    match_history.update(update_match)
+    stats.update(update_player)
+
+    make_json(match_history, match_json)
+    make_json(stats, stat_json)
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     }
-    new_sched_pages = [BeautifulSoup(requests.get("https://www.vlr.gg/matches", headers = headers).text, 'html.parser'), BeautifulSoup(requests.get("https://www.vlr.gg/matches/?page=2", headers = headers).text, 'html.parser')]
+    new_sched_pages = [BeautifulSoup(requests.get("https://www.vlr.gg/matches", headers = headers).text, 'lxml'), BeautifulSoup(requests.get("https://www.vlr.gg/matches/?page=2", headers = headers).text, 'lxml')]
     
     new_links = []
     for page in new_sched_pages:
@@ -326,6 +366,4 @@ def cache_update():
                 new_links.append(link.get('href'))
     create_schedule(new_links)
 
-#create_match_history(links)
-#create_schedule(schedule_links)
-cache_update()
+print('Elapsed', time.time() - start)

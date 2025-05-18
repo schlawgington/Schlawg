@@ -28,9 +28,7 @@ b3 = 0.05407970916940718
 b4 = -0.0031161344386801447
 
 def generateprobability(matchlink):
-    if 'https://www.vlr.gg/' in matchlink:
-        matchinfo = matchlink.replace('https://www.vlr.gg', '')
-        matchhash = hashlib.md5(matchinfo.encode('utf-8')).hexdigest()
+    matchhash = hashlib.md5(matchlink.encode('utf-8')).hexdigest()
 
     def get_team_stats(matchhash):
         playerlist = tbd[matchhash]['Players']
