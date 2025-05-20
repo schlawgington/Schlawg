@@ -71,12 +71,6 @@ def loadfile(file):
     else:
         return None
 
-team_list = loadfile(teams_json)
-tbd = loadfile(tbd_json)
-match_history = loadfile(match_json)
-elo = loadfile(ranking_json)
-error = loadfile(error_json)
-
 def prob(r1, r2):
     return 1.0 / (1 + math.pow(10, (r1 - r2) / 400))
 
@@ -92,7 +86,10 @@ def create_team_list():
         for team in team_list_html:
             ge_text = team.find('div', class_ = 'ge-text')
             teamname = ge_text.find(string = True, recursive = False)
-            teams.add(teamname.strip())
+            team_rating = team.find('div', class_ = 'rank-item-rating').text
+            team_string = f'{teamname.strip()}: {team_rating.strip()}'
+            
+            teams.add(team_string)
     
     return list(teams)
 
@@ -171,15 +168,15 @@ def create_match_history(links):
 
 def create_team_rankings():
     teams = {}
-    def get_elo(team_name): 
-        return teams.setdefault(team_name, 1500) 
     
     for team in team_list:
+        teamname = team.split(': ')[0]
+        team_elo = int(team.split(': ')[1])
         if team not in teams:
-            teams[team] = 1500
+            teams[teamname] = team_elo
     for match in match_history.keys():
         match_team_and_score = match_history[match]['Match Score']
-        match_info = re.search(r'^(.*?)\s+(\d:\d)\s+(.*)$', match_team_and_score)
+        match_info = re.match(r'^(.*)\s(\d:\d)\s(.*)$', match_team_and_score)
 
         if not match_info:
             continue
@@ -191,8 +188,11 @@ def create_team_rankings():
         team1_name = match_info.group(1)
         team2_name = match_info.group(3)
 
-        team1_elo = get_elo(team1_name)
-        team2_elo = get_elo(team2_name)
+        if team1_name not in teams or team2_name not in teams:
+            continue
+        
+        team1_elo = teams[team1_name]
+        team2_elo = teams[team2_name]
 
         prob_team1_win = prob(team2_elo, team1_elo)
         prob_team2_win = prob(team1_elo, team2_elo)
@@ -251,13 +251,9 @@ def create_schedule(schedule_links):
                 'Time': date,
                 'Link': link
             }
-    with open(tbd_json, 'w', encoding = 'utf-8') as f:
-        json.dump(tbd_teams, f, indent = 4)
+    return tbd_teams
 
-def cache_update():
-    def get_elo(team_name): 
-        return elo.setdefault(team_name, 1500) 
-    
+def cache_update():   
     now = datetime.now()
     update_matches_links = []
     update_match_hash = []
@@ -311,8 +307,8 @@ def cache_update():
         team2_name = match_info.group(3)
 
         if team1_name or team2_name not in new_elo:
-            new_elo[team1_name] = get_elo(team1_name)
-            new_elo[team2_name] = get_elo(team2_name)
+            new_elo[team1_name] = elo[team1_name]
+            new_elo[team2_name] = elo[team2_name]
 
         prob_team1_win = prob(new_elo[team2_name], new_elo[team1_name])
         prob_team2_win = prob(new_elo[team1_name], new_elo[team2_name])
@@ -331,10 +327,28 @@ def cache_update():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     }
+
+    if os.path.exists(tbd_json):
+        os.remove(tbd_json)
+    
     new_links = get_schedule_links(force_refresh = True)
-    create_schedule(new_links)
+    new_tbd = create_schedule(new_links)
+    make_json(new_tbd, tbd_json)
+
 
 def main():
+    global team_list
+    global match_history
+    global elo
+    global tbd
+    global error
+    
+    team_list = loadfile(teams_json)
+    tbd = loadfile(tbd_json)
+    match_history = loadfile(match_json)
+    elo = loadfile(ranking_json)
+    error = loadfile(error_json)
+    
     if team_list is None:
         teams = create_team_list()
         make_json(teams, teams_json)
@@ -350,8 +364,11 @@ def main():
     
     if tbd is None:
         schedule_links = get_schedule_links()
-        create_schedule(schedule_links)
+        tbd_sched = create_schedule(schedule_links)
+        make_json(tbd_sched, tbd_json)
     
     cache_update()
+
+main()
 
 print('Elapsed', time.time() - start)
