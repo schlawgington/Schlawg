@@ -13,7 +13,8 @@ import time
 
 TEAM_NAME_NORMALIZATION = {
     "VISA KRÜ(KRÜ Esports)": "KRÜ Esports",
-    "M80": "Chet's Pets"
+    "M80": "Chet's Pets",
+    "DIRETORIA": "Vila do Zana"
 }
 
 start = time.time()
@@ -162,7 +163,8 @@ def create_match_history(links):
             match_dict[match_name] = {
                 'Match Score': match_string,
                 'Map Scores': map_strings,
-                'Total Round diff': f'{team1_tot_rounds} - {team2_tot_rounds} = {team1_tot_rounds - team2_tot_rounds}'
+                'Total Round diff': f'{team1_tot_rounds} - {team2_tot_rounds} = {team1_tot_rounds - team2_tot_rounds}',
+                'Match Link': f'{i}'
             }
     return match_dict
 
@@ -197,19 +199,21 @@ def create_team_rankings():
         prob_team1_win = prob(team2_elo, team1_elo)
         prob_team2_win = prob(team1_elo, team2_elo)
         
-        K = 30 + abs(round_win_diff)
+        K = 20 + abs(round_win_diff)
         if map_win_diff > 0:
             teams[team1_name] += round(K*(1-prob_team1_win), 1)
             teams[team2_name] += round(K*(0-prob_team2_win), 1)
-        else:
+        elif map_win_diff < 0:
             teams[team1_name] += round(K*(0-prob_team1_win), 1)
             teams[team2_name] += round(K*(1-prob_team2_win), 1)
+        else:
+            continue
 
     return dict(sorted(teams.items(), key=lambda x: x[1], reverse=True))
 
 
 def get_schedule_links(force_refresh = False):
-    schedule = [BeautifulSoup(getmatch("https://www.vlr.gg/matches", force_refresh = False), 'html.parser'), BeautifulSoup(getmatch("https://www.vlr.gg/matches/?page=2", force_refresh = False), 'html.parser')]
+    schedule = [BeautifulSoup(requests.get("https://www.vlr.gg/matches").text, 'lxml'), BeautifulSoup(requests.get("https://www.vlr.gg/matches/?page=2").text, 'lxml')]
     schedulelinks = []
     for card in schedule:
         cardclass = card.find_all('div', class_ = 'wf-card')
@@ -232,6 +236,12 @@ def create_schedule(schedule_links):
         
         team1 = teamnames[0].text.replace("\n", "").replace("\t", "")
         team2 = teamnames[1].text.replace("\n", "").replace("\t", "")
+
+
+        if team1 in TEAM_NAME_NORMALIZATION:
+            team1 = TEAM_NAME_NORMALIZATION[team1]
+        if team2 in TEAM_NAME_NORMALIZATION:
+            team2 = TEAM_NAME_NORMALIZATION[team2]
 
         real_team1 = f'{team1} [{elo[team1]}]'
         real_team2 = f'{team2} [{elo[team2]}]'
@@ -313,13 +323,15 @@ def cache_update():
         prob_team1_win = prob(new_elo[team2_name], new_elo[team1_name])
         prob_team2_win = prob(new_elo[team1_name], new_elo[team2_name])
         
-        K = 30 + abs(round_win_diff)
+        K = 20 + abs(round_win_diff)
         if map_win_diff > 0:
             new_elo[team1_name] += round(K*(1-prob_team1_win), 1)
             new_elo[team2_name] += round(K*(0-prob_team2_win), 1)
-        else:
+        elif map_win_diff < 0:
             new_elo[team1_name] += round(K*(0-prob_team1_win), 1)
             new_elo[team2_name] += round(K*(1-prob_team2_win), 1)
+        else:
+            continue
         
     elo.update(new_elo)
     make_json(elo, ranking_json)
@@ -328,10 +340,7 @@ def cache_update():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     }
 
-    if os.path.exists(tbd_json):
-        os.remove(tbd_json)
-    
-    new_links = get_schedule_links(force_refresh = True)
+    new_links = get_schedule_links()
     new_tbd = create_schedule(new_links)
     make_json(new_tbd, tbd_json)
 
