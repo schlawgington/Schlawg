@@ -15,6 +15,8 @@ start = time.time()
 match_json = 'match.json'
 player_json = 'player.json'
 mean_json = 'mean.json'
+match_data = 'match_data.json'
+tbd_json = 'tbd.json'
 
 def loadfile(file):
     if os.path.exists(file):
@@ -44,6 +46,8 @@ def geturl(url, force_refresh = False):
 matches = loadfile(match_json)
 player_file = loadfile(player_json)
 means_stds = loadfile(mean_json)
+match_data_file = loadfile(match_data)
+tbd = loadfile(tbd_json)
 
 if not player_file:
     players = []
@@ -74,18 +78,13 @@ if not player_file:
     with open (player_json, 'w', encoding='utf-8') as f:
         json.dump(player_dict, f, indent=4)
 
-class player:
-    def __init__(self, player_name):
-        self.player_name = player_name
-        self.acs_arr = 0
-        self.acs_mean = 0
-        self._acs_std = 0
-    
-    def player_analyzer(self):
+if not match_data_file:
+    match_player_dict = {}
+    already_parsed = set()
+    for player in player_file.keys():
         i = 1
-        player_acs = []
         while True:
-            url = requests.get(f'{player_file[self.player_name]} + /?page={i}')
+            url = requests.get(f'{player_file[player]}/?page={i}')
             if url.status_code != 200:
                 break
             current_page = BeautifulSoup(url.text, 'lxml')
@@ -95,33 +94,80 @@ class player:
             links = [j.get('href') for j in link_html]
 
             for link in links:
-                acs_page = BeautifulSoup(geturl("https://www.vlr.gg" + link), 'lxml')
+                match_url = "https://www.vlr.gg" + link
+                match_hash = hashlib.md5(match_url.encode('utf-8')).hexdigest()
+                
+                if match_hash in already_parsed:
+                    continue
+                already_parsed.add(match_hash)
+                
+                if match_hash not in match_player_dict:
+                    match_player_dict[match_hash] = {}
+                
+                acs_page = BeautifulSoup(geturl(match_url), 'lxml')
                 rlvnt_data = acs_page.find('div', class_ = 'vm-stats-game mod-active')
+                if not rlvnt_data:
+                    continue
                 player_tables = rlvnt_data.find_all('tbody')
 
                 for table in player_tables:
                     player_tr = table.find_all('tr')
                     for player_instance in player_tr:
-                        if player_instance.find('div', class_ = 'text-of').text.strip() == self.player_name:
-                            player_instance_stats = player_instance.find_all('td', class_ = 'mod-stat')
-                            per_game_acs = player_instance_stats[1].text.strip().replace('\n', ' ')
-                            acs_list = per_game_acs.split(' ')
-                            for acs in acs_list:
-                                if acs.isdigit():
-                                    player_acs.append(int(acs))
-        
-        self.acs_arr = np.array(player_acs)
-        self.acs_mean = np.mean(self.acs_arr)
-        self.acs_std = np.std(self.acs_arr)
+                        player_name = player_instance.find('div', class_ = 'text-of').text.strip()
+                        
+                        player_instance_stats = player_instance.find_all('td', class_ = 'mod-stat')
+                        per_game_acs = player_instance_stats[1].text.strip().replace('\n', ' ')
+                        acs_str_list = per_game_acs.split(' ')
+                        acs_list = []
+                        for acs in acs_str_list:
+                            if acs.isdigit():
+                                acs_list.append(int(acs))
+                        avg_acs = sum(acs_list) / len(acs_list) if len(acs_list) > 0 else None
+                        
+                        if player_name not in match_player_dict[match_hash]:
+                            match_player_dict[match_hash][player_name] = avg_acs
+    
+    with open (match_data, 'w', encoding='utf-8') as f:
+        json.dump(match_player_dict, f, indent=4)
 
-    def make_hist(self, data):
-        plt.hist(data)
+class player:
+    def __init__(self, player_name):
+        self.player_name = player_name
+        self.acs_arr = 0
+        self.acs_mean = 0
+        self.acs_std = 0
+    
+    def player_analyzer(self):
+        acs_list = []
+        for match_file in match_data_file.keys():
+            if self.player_name in match_data_file[match_file]:
+                acs_list.append(match_data_file[match_file][self.player_name])
+
+        cleaned_acs_list = [round(acs, 2) for acs in acs_list if acs is not None]
+
+        self.acs_arr = np.array(cleaned_acs_list)
+        self.acs_mean = np.mean(self.acs_arr) if len(self.acs_arr) > 0 else 150
+        self.acs_std = np.std(self.acs_arr) if len(self.acs_arr) > 0 else 150
+
+    def make_hist(self):
+        plt.hist(self.acs_arr)
         plt.show()
 
-zekken = player("Shondex")
-zekken.player_analyzer()
-print(zekken.acs_arr, zekken.acs_mean, zekken.acs_std)
-zekken.make_hist(zekken.acs_arr)
+def match_analyzer(match_link):
+    match_hash = hashlib.md5(match_link.encode('utf-8')).hexdigest()
+    player_list = tbd[match_hash]["Players"]
+    player_class_dict = {}
+
+    for player_instance in player_list:
+        obj_player_instance = player(player_instance)
+        obj_player_instance.player_analyzer()  
+        if obj_player_instance.player_name not in player_class_dict:
+            player_class_dict[obj_player_instance.player_name] = [obj_player_instance.acs_mean, obj_player_instance.acs_std]
+
+    return player_class_dict
+
+test = match_analyzer("https://www.vlr.gg/491470/tbk-esports-vs-f4tality-gamers-club-challengers-league-2025-brazil-split-2-r1")
+print(test)
 
 end = time.time() - start
 print(f'Elapsed: {end}')

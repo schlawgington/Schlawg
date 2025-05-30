@@ -247,6 +247,14 @@ def create_schedule(schedule_links):
         real_team2 = f'{team2} [{elo[team2]}]'
 
         table = soup2.find_all('table', class_ = 'wf-table-inset mod-overview')
+
+        player_set = set()
+        for tab in table:
+            players = tab.find_all('div', class_ = 'text-of')
+            for player in players:
+                player_set.add(player.text.strip())
+        
+        player_list = list(player_set)
         
         matchname = hashlib.md5(link.encode('utf-8')).hexdigest()
         match_datetime = soup2.find('div', class_ = 'match-header-date').find_all('div', class_ = 'moment-tz-convert')
@@ -259,7 +267,8 @@ def create_schedule(schedule_links):
                 'Team 1': f'{real_team1}: {round(100*prob(elo[team2], elo[team1]), 2)}%',
                 'Team 2': f'{real_team2}: {round(100*prob(elo[team1], elo[team2]), 2)}%',
                 'Time': date,
-                'Link': link
+                'Link': link,
+                'Players': player_list
             }
     return tbd_teams
 
