@@ -14,7 +14,8 @@ import time
 TEAM_NAME_NORMALIZATION = {
     "VISA KRÜ(KRÜ Esports)": "KRÜ Esports",
     "M80": "Chet's Pets",
-    "DIRETORIA": "Vila do Zana"
+    "Vila do Zana": "DIRETORIA",
+    "Guangzhou Huadu Bilibili Gaming(Bilibili Gaming)": "Bilibili Gaming"
 }
 
 start = time.time()
@@ -242,6 +243,9 @@ def create_schedule(schedule_links):
             team1 = TEAM_NAME_NORMALIZATION[team1]
         if team2 in TEAM_NAME_NORMALIZATION:
             team2 = TEAM_NAME_NORMALIZATION[team2]
+
+        elo.setdefault(team1, 1500)
+        elo.setdefault(team2, 1500)
 
         real_team1 = f'{team1} [{elo[team1]}]'
         real_team2 = f'{team2} [{elo[team2]}]'
