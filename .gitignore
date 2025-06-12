@@ -2,3 +2,7 @@ cache
 schedule
 *.html
 *.json
+*.csv
+event_cache
+__pycache__
+upcoming
