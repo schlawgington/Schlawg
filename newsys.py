@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -115,6 +116,7 @@ def get_match_info(match_link):
             current_match_link = f'https://vlr.gg{match_get}'
 
             match_html = BeautifulSoup(requests.get(current_match_link).text, 'lxml')
+            print(f"Got {current_match_link}")
 
             teams_in_match = match_html.find_all('a', class_ = 'match-header-link')
             for team in teams_in_match:
@@ -151,10 +153,7 @@ def get_match_info(match_link):
 
                     score_diff = int(rlvnt_team_score) - int(score_diff)
 
-                if not isinstance(enemy_elo, int):
-                    enemy_elo = int(enemy_elo)
-
-                prob_win = prob(enemy_elo, rating_num)
+                prob_win = prob(int(enemy_elo), rating_num)
                 
                 K = 20 + abs(score_diff)
 
@@ -167,7 +166,7 @@ def get_match_info(match_link):
 
     return team_map_elo
 
-glob = get_match_info("https://www.vlr.gg/498624/fnatic-vs-gen-g-valorant-masters-toronto-2025-ubqf")
+glob = get_match_info("https://www.vlr.gg/498628/paper-rex-vs-fnatic-valorant-masters-toronto-2025-gf")
 print(glob)
 
 end = time.time()

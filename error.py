@@ -40,4 +40,4 @@ for match in error.keys():
     elif team_score_1 < team_score_2 and team1_prediction > team2_prediction:
         incorrect_prediction += 1
 
-print(correct_prediction, incorrect_prediction)
+print(correct_prediction, incorrect_prediction, round(100*correct_prediction/(correct_prediction + incorrect_prediction), 2))

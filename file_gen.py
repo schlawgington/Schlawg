@@ -4,10 +4,8 @@ from bs4 import BeautifulSoup
 import json
 import hashlib
 import re
-from collections import defaultdict
 import numpy as np
 from datetime import datetime
-import shutil
 import math
 import time
 
@@ -15,7 +13,8 @@ TEAM_NAME_NORMALIZATION = {
     "VISA KRÜ(KRÜ Esports)": "KRÜ Esports",
     "M80": "Chet's Pets",
     "Vila do Zana": "DIRETORIA",
-    "Guangzhou Huadu Bilibili Gaming(Bilibili Gaming)": "Bilibili Gaming"
+    "Guangzhou Huadu Bilibili Gaming(Bilibili Gaming)": "Bilibili Gaming",
+    "JD Mall JDG Esports(JDG Esports)": "JDG Esports"
 }
 
 start = time.time()
@@ -95,10 +94,10 @@ def create_team_list():
     
     return list(teams)
 
-def get_history_links(max_pages = 33):
+def get_history_links():
     links = set()
-    for i in range(1, max_pages):
-        soup = BeautifulSoup(geturl(f"https://www.vlr.gg/matches/results/?page={i}"), 'lxml')
+    for page in range(1, 33):
+        soup = BeautifulSoup(geturl(f"https://www.vlr.gg/matches/results/?page={page}"), 'lxml')
         matches = soup.find_all('a', href=True)        
         for match in matches:
             href = match.get('href')
@@ -328,6 +327,11 @@ def cache_update():
         
         team1_name = match_info.group(1)
         team2_name = match_info.group(3)
+
+        if team1_name not in elo:
+            elo[team1_name] = 1500
+        if team2_name not in elo:
+            elo[team2_name] = 1500
 
         if team1_name or team2_name not in new_elo:
             new_elo[team1_name] = elo[team1_name]
