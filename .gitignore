@@ -1,5 +1,7 @@
 cache
 schedule
+Match Data
+Match Results Pages
 *.html
 *.json
 *.csv

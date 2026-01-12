@@ -6,14 +6,14 @@ import hashlib
 import numpy as np
 import re
 import time
+import csv
 
 start = time.time()
 
-matchPageCache = "match page cache"
-matchDataCache = "match data cache"
+matchPageCache = "Match Results Pages" #Holds html for pages that hold links to actual match pages
+matchDataCache = "Match Data" #Holds html for match data
+matchDataJsonCache = "Match Data JSON" #Holds parsed data in JSON format for later calculations
 vlrLink = "https://www.vlr.gg"
-os.makedirs(matchPageCache, exist_ok=True)
-os.makedirs(matchDataCache, exist_ok=True)
 
 #headers for web requests
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
@@ -49,51 +49,116 @@ def getHistoryLinks(numPages):
 
     return list(links)
 
+def getAggregateStat(td):
+    both = td.find("span", class_="side mod-side mod-both")
+    if both:
+        return both.text.strip()
+
+    values = [s.text.strip() for s in td.find_all("span", class_="side")]
+    return values[-1] if values else td.text.strip()
+
+#Convert html table to numpy
 def tableToNumpy(table):
     rows = table.find_all('tr')
     data = []
 
     for row in rows:
         cols = row.find_all("td")
-        data.append([col.get_text(strip=False).strip().replace('\t', '') for col in cols])
+        data.append([getAggregateStat(col) for col in cols])
 
     return np.array(data, dtype=object)
 
+def CleanData(data: list):
+    cleanedList = []
+
+    if not any(x.strip() for x in data):
+        return []
+
+    #remove falsies from data
+    noFalsyData = [x for x in data if x]
+
+    for i in noFalsyData:
+        if "%" in i:
+            j = i.replace("%", "")
+            cleanedList.append(int(j)/100)
+        else:
+            try:
+                cleanedList.append(float(i))
+            except ValueError:
+                cleanedList.append(int(i))
+
+    return cleanedList[0] if len(cleanedList) == 1 else cleanedList
+
 def createMatchToDataDict(links: list):
     #Put data in json files in form of {match Hash: {Team: {Player Stats: }}}
+
+    HashedMatchNames = []
+
     for link in links:
         fullLink = vlrLink + link
 
         matchPage = BeautifulSoup(getURL(fullLink, matchDataCache), 'lxml')
         matchName = hashlib.md5(fullLink.encode()).hexdigest()
+        HashedMatchNames.append(matchName)
 
-        TeamNames = [team.text.strip() for team in matchPage.find_all("div", class_ = "wf-title-med")]
+        #If no data just continue
+        try:
+            oneMapFlag = False
 
-        matchTableData = matchPage.find('div', class_ = "vm-stats-game mod-active").find_all("table")
+            TeamNames = [
+                team.text.strip()
+                for team in matchPage.find_all("div", class_="wf-title-med")
+            ]
 
-        matchDataDict = {team: {} for team in TeamNames}
+            matchMapsHtml = matchPage.find_all("div", class_="vm-stats-gamesnav-item js-map-switch")
+            matchMaps = [maps.text.split() for maps in matchMapsHtml]
+            
+            matchDataDict = {"Match Link": fullLink}
+
+            #Occurs in BO1s
+            if not matchMapsHtml:
+                matchMaps = matchPage.find("div", class_ = "map").find("span").text.strip()
+                oneMapFlag = True
+                matchDataDict.update({matchMaps: {Team: {} for Team in TeamNames}})
+            else:                        
+                matchDataDict.update({"All Maps": {Team: {} for Team in TeamNames}})
+                matchDataDict.update({Map[1]: {Team: {} for Team in TeamNames} for Map in matchMaps})
+
+            matchTableData = matchPage.find_all("table")
+
+        except AttributeError:
+            continue
+
         for i, table in enumerate(matchTableData):
             currentTable = tableToNumpy(table)
+
+            #Handles edge case of BO1
+            if (i == 0 or i == 1) and not oneMapFlag:
+                currentMap = "All Maps"
+            elif oneMapFlag:
+                currentMap = matchMaps
+            else:
+                currentMap = matchMaps[i // 2 - 1][1]
 
             for player in currentTable:
                 if not player:
                     continue
                 
-                Team = TeamNames[0] if i == 0 else TeamNames[1]
+                Team = TeamNames[0] if i % 2 == 0 else TeamNames[1]
 
                 name = player[0].replace("\n", "")
-                R = player[2].replace("\n", " ")
-                ACS = player[3].replace("\n", " ")
-                K = player[4].replace("\n", " ")
-                D = player[5].strip().replace("\n", " ")
-                A = player[6].replace("\n", " ")
-                deltaKD = player[7].replace("\n", " ")
-                KAST = player[8].replace("\n", " ")
-                ADR = player[9].replace("\n", " ")
-                HS_pct = player[10].replace("\n", " ")
-                FK = player[11].replace("\n", " ")
-                FD = player[12].replace("\n", " ")
-                deltaFKFD = player[13].replace("\n", " ")
+                R = CleanData(player[2].replace("\n", " ").replace("\xa0", " ").split(" "))
+                ACS = CleanData(player[3].replace("\n", " ").replace("\xa0", " ").split(" "))
+                K = CleanData(player[4].replace("\n", " ").replace("\xa0", " ").split(" "))
+                D = CleanData(player[5].replace("\n", " ").replace("\xa0", " ").split(" "))
+                A = CleanData(player[6].replace("\n", " ").replace("\xa0", " ").split(" "))
+                deltaKD = CleanData(player[7].replace("\n", " ").replace("\xa0", " ").split(" "))
+                KAST = CleanData(player[8].replace("\n", " ").replace("\xa0", " ").split(" "))
+                ADR = CleanData(player[9].replace("\n", " ").replace("\xa0", " ").split(" "))
+                HS_pct = CleanData(player[10].replace("\n", " ").replace("\xa0", " ").split(" "))
+                FK = CleanData(player[11].replace("\n", " ").replace("\xa0", " ").split(" "))
+                FD = CleanData(player[12].replace("\n", " ").replace("\xa0", " ").split(" "))
+                deltaFKFD = CleanData(player[13].replace("\n", " ").replace("\xa0", " ").split(" "))
 
                 PlayerObject = {
                     "Name": name,
@@ -111,15 +176,27 @@ def createMatchToDataDict(links: list):
                     "delta FK FD": deltaFKFD
                 }
 
-                if PlayerObject["Name"] not in matchDataDict[Team]:
-                    matchDataDict[Team][PlayerObject["Name"]] = PlayerObject
+                if PlayerObject["Name"] not in matchDataDict[currentMap][Team]:
+                    matchDataDict[currentMap][Team][PlayerObject["Name"]] = PlayerObject
 
-        filePath = os.path.join(matchDataCache, matchName)
+        filePath = os.path.join(matchDataJsonCache, matchName)
         with open(f"{filePath}.json", 'w', encoding='utf-8') as f:
             json.dump(matchDataDict, f, indent=4)
 
+    if not os.path.exists("Hashes.csv"):
+        with open("Hashes.csv", 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerows([[h] for h in HashedMatchNames])
 
-createMatchToDataDict(["/600370/f9-eicar-vs-erah-esport-challengers-2026-france-revolution-split-1-w1"])
+def main():
+    unHashedMatchNames = getHistoryLinks(2)
+    createMatchToDataDict(unHashedMatchNames)
+
+if __name__ == "__main__":
+    os.makedirs(matchPageCache, exist_ok=True)
+    os.makedirs(matchDataCache, exist_ok=True)
+    os.makedirs(matchDataJsonCache, exist_ok=True)
+    main()
 
 end = time.time()
 print(f"{end - start}s")
