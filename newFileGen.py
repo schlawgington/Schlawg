@@ -7,7 +7,9 @@ import numpy as np
 import re
 import time
 import csv
+import pprint
 
+print = pprint.pprint
 start = time.time()
 
 matchPageCache = "Match Results Pages" #Holds html for pages that hold links to actual match pages
@@ -35,11 +37,11 @@ def getURL(url, cache, force_refresh = False):
     return contents
 
 #Get all matches from page 1 to numPages
-def getHistoryLinks(numPages):
+def getHistoryLinks(numPages, forceRefresh: bool):
     links = set()
 
     for page in range(1, numPages):
-        soup = BeautifulSoup(getURL(f"https://www.vlr.gg/matches/results/?page={page}", matchPageCache), 'lxml')
+        soup = BeautifulSoup(getURL(f"https://www.vlr.gg/matches/results/?page={page}", matchPageCache, force_refresh=forceRefresh), 'lxml')
         matches = soup.find_all('a', href=True)        
 
         for match in matches:
@@ -68,26 +70,24 @@ def tableToNumpy(table):
 
     return np.array(data, dtype=object)
 
-def CleanData(data: list):
-    cleanedList = []
+def CleanData(data):
 
     if not any(x.strip() for x in data):
-        return []
+        return None
 
-    #remove falsies from data
-    noFalsyData = [x for x in data if x]
+    if "%" in data:
+        newData = data.replace("%", "")
+        return int(newData)/100
+    else:
+        try:
+            return float(data)
+        except ValueError:
+            return int(data)
 
-    for i in noFalsyData:
-        if "%" in i:
-            j = i.replace("%", "")
-            cleanedList.append(int(j)/100)
-        else:
-            try:
-                cleanedList.append(float(i))
-            except ValueError:
-                cleanedList.append(int(i))
+    return
 
-    return cleanedList[0] if len(cleanedList) == 1 else cleanedList
+def HTMLToText(HTML):
+    return HTML.text.strip()
 
 def createMatchToDataDict(links: list):
     #Put data in json files in form of {match Hash: {Team: {Player Stats: }}}
@@ -105,24 +105,44 @@ def createMatchToDataDict(links: list):
         try:
             oneMapFlag = False
 
-            TeamNames = [
-                team.text.strip()
-                for team in matchPage.find_all("div", class_="wf-title-med")
-            ]
+            TeamNames = [HTMLToText(team) for team in matchPage.find_all("div", class_="wf-title-med")]
 
             matchMapsHtml = matchPage.find_all("div", class_="vm-stats-gamesnav-item js-map-switch")
             matchMaps = [maps.text.split() for maps in matchMapsHtml]
+
+            mapNametoResult = [HTMLToText(page) for page in matchPage.find_all(class_ = "team-name")]
+            mapResults = [HTMLToText(score) for score in matchPage.find_all(class_ = "score")]
             
-            matchDataDict = {"Match Link": fullLink}
+            matchDataDict = {}
 
             #Occurs in BO1s
             if not matchMapsHtml:
                 matchMaps = matchPage.find("div", class_ = "map").find("span").text.strip()
                 oneMapFlag = True
+
+                matchDataDict.update({"Match Results": {
+                                       HTMLToText(mapNametoResult[0]): HTMLToText(mapResults[0]),
+                                       HTMLToText(mapNametoResult[1]): HTMLToText(mapResults[1])
+                                    }})
                 matchDataDict.update({matchMaps: {Team: {} for Team in TeamNames}})
-            else:                        
+            else:
+                matchDataDict.update({"Match Results": {}})
                 matchDataDict.update({"All Maps": {Team: {} for Team in TeamNames}})
                 matchDataDict.update({Map[1]: {Team: {} for Team in TeamNames} for Map in matchMaps})
+
+                for i, Map in enumerate(matchMaps):
+                    start = i * 2
+                    end = start + 2
+
+                    matchDataDict["Match Results"][Map[1]] = {
+                        team: result
+                        for team, result in zip(
+                            mapNametoResult[start:end],
+                            mapResults[start:end]
+                        )
+                    }
+
+            matchDataDict.update({"Match Link": fullLink})
 
             matchTableData = matchPage.find_all("table")
 
@@ -147,18 +167,18 @@ def createMatchToDataDict(links: list):
                 Team = TeamNames[0] if i % 2 == 0 else TeamNames[1]
 
                 name = player[0].replace("\n", "")
-                R = CleanData(player[2].replace("\n", " ").replace("\xa0", " ").split(" "))
-                ACS = CleanData(player[3].replace("\n", " ").replace("\xa0", " ").split(" "))
-                K = CleanData(player[4].replace("\n", " ").replace("\xa0", " ").split(" "))
-                D = CleanData(player[5].replace("\n", " ").replace("\xa0", " ").split(" "))
-                A = CleanData(player[6].replace("\n", " ").replace("\xa0", " ").split(" "))
-                deltaKD = CleanData(player[7].replace("\n", " ").replace("\xa0", " ").split(" "))
-                KAST = CleanData(player[8].replace("\n", " ").replace("\xa0", " ").split(" "))
-                ADR = CleanData(player[9].replace("\n", " ").replace("\xa0", " ").split(" "))
-                HS_pct = CleanData(player[10].replace("\n", " ").replace("\xa0", " ").split(" "))
-                FK = CleanData(player[11].replace("\n", " ").replace("\xa0", " ").split(" "))
-                FD = CleanData(player[12].replace("\n", " ").replace("\xa0", " ").split(" "))
-                deltaFKFD = CleanData(player[13].replace("\n", " ").replace("\xa0", " ").split(" "))
+                R = CleanData(player[2])
+                ACS = CleanData(player[3])
+                K = CleanData(player[4])
+                D = CleanData(player[5])
+                A = CleanData(player[6])
+                deltaKD = CleanData(player[7])
+                KAST = CleanData(player[8])
+                ADR = CleanData(player[9])
+                HS_pct = CleanData(player[10])
+                FK = CleanData(player[11])
+                FD = CleanData(player[12])
+                deltaFKFD = CleanData(player[13])
 
                 PlayerObject = {
                     "Name": name,
@@ -190,7 +210,7 @@ def createMatchToDataDict(links: list):
 
 def main():
     unHashedMatchNames = getHistoryLinks(2)
-    createMatchToDataDict(unHashedMatchNames)
+    createMatchToDataDict(unHashedMatchNames, forceRefresh = True)
 
 if __name__ == "__main__":
     os.makedirs(matchPageCache, exist_ok=True)

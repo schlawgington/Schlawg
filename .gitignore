@@ -1,6 +1,7 @@
 cache
 schedule
 Match Data
+Match Data JSON
 Match Results Pages
 *.html
 *.json
