@@ -9,3 +9,6 @@ Match Results Pages
 event_cache
 __pycache__
 upcoming
+venv/
+.env/
+*.pyc

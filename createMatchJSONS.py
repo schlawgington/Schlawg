@@ -9,9 +9,6 @@ import time
 import csv
 import pprint
 
-print = pprint.pprint
-start = time.time()
-
 matchPageCache = "Match Results Pages" #Holds html for pages that hold links to actual match pages
 matchDataCache = "Match Data" #Holds html for match data
 matchDataJsonCache = "Match Data JSON" #Holds parsed data in JSON format for later calculations
@@ -28,8 +25,8 @@ def getURL(url, cache, force_refresh = False):
     if os.path.exists(filePath) and not force_refresh:
         with open(filePath, 'r', encoding='utf-8') as f:
             return f.read()
-        
-    contents = requests.get(url, headers=headers).text
+    
+    contents = requests.get(url, headers=headers, timeout=(5, 10)).text
 
     with open(filePath, 'w', encoding='utf-8') as f:
         f.write(contents)
@@ -37,10 +34,10 @@ def getURL(url, cache, force_refresh = False):
     return contents
 
 #Get all matches from page 1 to numPages
-def getHistoryLinks(numPages, forceRefresh: bool):
+def getHistoryLinks(startPage, endPages, forceRefresh: bool):
     links = set()
 
-    for page in range(1, numPages):
+    for page in range(startPage, endPages):
         soup = BeautifulSoup(getURL(f"https://www.vlr.gg/matches/results/?page={page}", matchPageCache, force_refresh=forceRefresh), 'lxml')
         matches = soup.find_all('a', href=True)        
 
@@ -84,12 +81,10 @@ def CleanData(data):
         except ValueError:
             return int(data)
 
-    return
-
 def HTMLToText(HTML):
     return HTML.text.strip()
 
-def createMatchToDataDict(links: list):
+def createMatchToDataDict(links: list, forceRefresh = False):
     #Put data in json files in form of {match Hash: {Team: {Player Stats: }}}
 
     HashedMatchNames = []
@@ -113,22 +108,21 @@ def createMatchToDataDict(links: list):
             mapNametoResult = [HTMLToText(page) for page in matchPage.find_all(class_ = "team-name")]
             mapResults = [HTMLToText(score) for score in matchPage.find_all(class_ = "score")]
             
-            matchDataDict = {}
+            matchDataDict = {
+                "Match Results": {},
+                "All Maps": {Team: {} for Team in TeamNames}
+            }
 
             #Occurs in BO1s
             if not matchMapsHtml:
                 matchMaps = matchPage.find("div", class_ = "map").find("span").text.strip()
-                oneMapFlag = True
 
                 matchDataDict.update({"Match Results": {
                                        HTMLToText(mapNametoResult[0]): HTMLToText(mapResults[0]),
                                        HTMLToText(mapNametoResult[1]): HTMLToText(mapResults[1])
                                     }})
-                matchDataDict.update({matchMaps: {Team: {} for Team in TeamNames}})
             else:
-                matchDataDict.update({"Match Results": {}})
-                matchDataDict.update({"All Maps": {Team: {} for Team in TeamNames}})
-                matchDataDict.update({Map[1]: {Team: {} for Team in TeamNames} for Map in matchMaps})
+                matchDataDict["Match Results"] = {mapNametoResult[i]: mapResults[i] for i in range(len(mapNametoResult))}
 
                 for i, Map in enumerate(matchMaps):
                     start = i * 2
@@ -144,7 +138,7 @@ def createMatchToDataDict(links: list):
 
             matchDataDict.update({"Match Link": fullLink})
 
-            matchTableData = matchPage.find_all("table")
+            matchTableData = matchPage.find_all("table", class_ = "vm-stats-game mod-active")
 
         except AttributeError:
             continue
@@ -152,13 +146,7 @@ def createMatchToDataDict(links: list):
         for i, table in enumerate(matchTableData):
             currentTable = tableToNumpy(table)
 
-            #Handles edge case of BO1
-            if (i == 0 or i == 1) and not oneMapFlag:
-                currentMap = "All Maps"
-            elif oneMapFlag:
-                currentMap = matchMaps
-            else:
-                currentMap = matchMaps[i // 2 - 1][1]
+            currentMap = "All Maps"
 
             for player in currentTable:
                 if not player:
@@ -203,20 +191,22 @@ def createMatchToDataDict(links: list):
         with open(f"{filePath}.json", 'w', encoding='utf-8') as f:
             json.dump(matchDataDict, f, indent=4)
 
-    if not os.path.exists("Hashes.csv"):
-        with open("Hashes.csv", 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerows([[h] for h in HashedMatchNames])
+    with open("Hashes.csv", 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows([[h] for h in HashedMatchNames])
 
 def main():
-    unHashedMatchNames = getHistoryLinks(2)
-    createMatchToDataDict(unHashedMatchNames, forceRefresh = True)
+    forceRefesh = True
+    unHashedMatchNames = getHistoryLinks(1, 5, forceRefresh = forceRefesh)
+    createMatchToDataDict(unHashedMatchNames, forceRefresh = forceRefesh)
 
 if __name__ == "__main__":
+    print = pprint.pprint
+    start = time.time()
     os.makedirs(matchPageCache, exist_ok=True)
     os.makedirs(matchDataCache, exist_ok=True)
     os.makedirs(matchDataJsonCache, exist_ok=True)
     main()
 
-end = time.time()
-print(f"{end - start}s")
+    end = time.time()
+    print(f"{end - start}s")
