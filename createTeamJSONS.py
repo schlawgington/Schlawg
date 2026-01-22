@@ -7,7 +7,11 @@ import pprint
 TeamDataJson = "Team Data JSON"
 MatchDataJsonFolder = "Match Data JSON"
 
-os.makedirs(TeamDataJson, exist_ok=True)
+def extractMatchID(matchPath):
+    return os.path.splitext(os.path.basename(matchPath))[0]
+
+def normalizePlayer(name):
+    return " ".join(name.split())
 
 def getmatchHashes():
     matchHashes = []
@@ -30,67 +34,115 @@ def createTeamJsons(Hashes: list):
 
     for matchPath in Hashes:
 
+        # Open match data json
         try: 
             with open(matchPath, 'r', encoding='utf-8') as dataFile:
                 matchData = json.load(dataFile)
         except FileNotFoundError:
             continue
 
-        matchResults = matchData.get("Match Results")
+        TeamNames = list(matchData["Aggregate Stats"].keys())
 
-        for Map, mapData in matchData.items():
-            if Map in ("Match Link", "Match Results", "All Maps"):
-                continue
+        for teamName in TeamNames:
+            # Shorthand for team stats from match data json
+            Shorthand = matchData["Aggregate Stats"][teamName]
 
-            for Team, players in mapData.items():
-                teamFilePath = os.path.join(TeamDataJson, f"{Team}.json")
+            filePath = os.path.join(TeamDataJson, f"{teamName}.json")
 
-                if os.path.exists(teamFilePath):
-                    with open(teamFilePath, 'r', encoding='utf-8') as f:
-                        TeamDict = json.load(f)
-                else:
-                    TeamDict = {
-                        "Match Counter": 0,
-                        "Round Counter": 0,
-                        "Maps": {
-                            mapName: {
-                                "Total Wins": 0,
-                                "Total Losses": 0,
-                                "Win%": None
-                            } for mapName in MapList
-                        },
-                        "Players": {}
-                    }
+            if os.path.exists(filePath):
+                with open(filePath, 'r', encoding='utf-8') as teamFile:
+                    teamDict = json.load(teamFile)
 
-                TeamDict["Match Counter"] += 1
+                processedMatchID = extractMatchID(matchPath)
+                if processedMatchID in teamDict["Processed Matches"]:
+                    continue
 
-                for playerName, stats in players.items():
-                    if playerName not in TeamDict["Players"]:
-                        TeamDict["Players"][playerName] = stats
+                for player, stats in Shorthand.items():
+                    player = normalizePlayer(player)
 
+                    if player not in teamDict:
+                        teamDict[player] = stats
+                        continue
+
+                    if player == "Match Counter" or player == "Round Counter" or player == "Processed Matches" or player in MapList:
+                        continue
+
+                    for stat in teamDict[player].keys():
+                        if not teamDict[player][stat]:
+                            teamDict[player][stat] = Shorthand[player][stat]
+                            continue
+
+                        if not Shorthand[player][stat]:
+                            continue
+                        
+                        # Accumulate Kills, Deaths, and Assists and average all other stats
+                        if stat == "R" or stat == "ACS" or stat == "KAST" or stat == "ADR" or stat == "HS%" or stat == "delta FK FD" or stat == "delta KD":
+                            teamDict[player][stat] = ((teamDict[player][stat] * teamDict["Match Counter"]) + Shorthand[player][stat]) / (teamDict["Match Counter"] + 1)
+                        elif stat == "K" or stat == "D" or stat == "A" or stat == "FK" or stat == "FD":
+                            teamDict[player][stat] += Shorthand[player][stat]
+                        else:
+                            continue
+            else:
+                playerList = list(matchData["Aggregate Stats"][teamName].keys())
+
+                # JSON object construction
+                teamDict = {
+                    player: {
+                    "R": Shorthand[player]["R"],
+                    "ACS": Shorthand[player]["ACS"],
+                    "K": Shorthand[player]["K"],
+                    "D": Shorthand[player]["D"],
+                    "A": Shorthand[player]["A"],
+                    "delta KD": Shorthand[player]["delta KD"],
+                    "KAST": Shorthand[player]["KAST"],
+                    "ADR": Shorthand[player]["ADR"],
+                    "HS%": Shorthand[player]["HS%"],
+                    "FK": Shorthand[player]["FK"],
+                    "FD": Shorthand[player]["FD"],
+                    "delta FK FD": Shorthand[player]["delta FK FD"]
+                } for player in playerList}
+
+                teamDict.update({Map: {
+                    "Win": 0,
+                    "Loss": 0,
+                    "Rounds Won": 0,
+                    "Rounds Lost": 0,
+                    "Win%": 0,
+                    "Round Win%": 0
+                } for Map in MapList})
+
+                teamDict.update({"Match Counter": 0, 
+                                "Processed Matches": []
+                            })
+
+            # Increments for num of matches, num of rounds, and calculations for match and round win %
+            for Map in matchData["Match Results"].keys():
+                currentTeamScore = 0
+                oppositeTeamScore = 0
+                for team, value in  matchData["Match Results"][Map].items():
+                    if team == teamName:
+                        teamDict[Map]["Rounds Won"] += int(value)
+                        currentTeamScore = int(value)
                     else:
-                        currentPlayer = TeamDict["Players"][playerName]
-                        for stat, statData in stats.items():
-                            if stat == "Name":
-                                continue
+                        teamDict[Map]["Rounds Lost"] += int(value)
+                        oppositeTeamScore = int(value)
 
-                            elif stat == "K" or stat == "D" or stat == "A" or stat == "FK" or stat == "FD":
-                                currentPlayer[stat] += statData if statData else 0
+                if currentTeamScore > oppositeTeamScore:
+                    teamDict[Map]["Win"] += 1
+                else:
+                    teamDict[Map]["Loss"] += 1
 
-                            elif stat == "delta KD":
-                                currentPlayer[stat] = (currentPlayer["K"] - currentPlayer["D"])/TeamDict["Match Counter"]
+                teamDict[Map]["Win%"] = teamDict[Map]["Win"] / (teamDict[Map]["Win"] + teamDict[Map]["Loss"])
+                teamDict[Map]["Round Win%"] = teamDict[Map]["Rounds Won"] / (teamDict[Map]["Rounds Won"] + teamDict[Map]["Rounds Lost"])
 
-                            elif stat == "KAST" or stat == "ADR" or stat == "ACS" or stat == "HS%":
-                                currentPlayer[stat] = ((currentPlayer[stat] * TeamDict["Match Counter"] - 1)
-                                                       + statData) / TeamDict["Match Counter"] if statData else currentPlayer[stat]
-                                
-                            elif stat == "delta FK FD":
-                                currentPlayer[stat] = (currentPlayer["FK"] - currentPlayer["FD"]) / TeamDict["Match Counter"]
+            teamDict["Match Counter"] += 1
+            teamDict["Processed Matches"].append(extractMatchID(matchPath))
 
-                with open(teamFilePath, 'w', encoding='utf-8') as f:
-                    json.dump(TeamDict, f, indent=4)
+            with open(filePath, 'w', encoding='utf-8') as dumpFile:
+                json.dump(teamDict, dumpFile, indent=4)
 
 if __name__ == "__main__":
+    os.makedirs(TeamDataJson, exist_ok=True)
     print = pprint.pprint
     start = time.time()
     matchHashes = getmatchHashes()

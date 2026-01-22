@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import hashlib
-import numpy as np
 import re
 import time
 import csv
@@ -16,6 +15,9 @@ vlrLink = "https://www.vlr.gg"
 
 #headers for web requests
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+
+def normalizePlayer(name):
+    return " ".join(name.split())
 
 def getURL(url, cache, force_refresh = False):
     hash = hashlib.md5(url.encode('utf-8')).hexdigest()
@@ -48,41 +50,24 @@ def getHistoryLinks(startPage, endPages, forceRefresh: bool):
 
     return list(links)
 
-def getAggregateStat(td):
-    both = td.find("span", class_="side mod-side mod-both")
-    if both:
-        return both.text.strip()
-
-    values = [s.text.strip() for s in td.find_all("span", class_="side")]
-    return values[-1] if values else td.text.strip()
-
-#Convert html table to numpy
-def tableToNumpy(table):
-    rows = table.find_all('tr')
-    data = []
-
-    for row in rows:
-        cols = row.find_all("td")
-        data.append([getAggregateStat(col) for col in cols])
-
-    return np.array(data, dtype=object)
-
-def CleanData(data):
-
-    if not any(x.strip() for x in data):
-        return None
-
-    if "%" in data:
-        newData = data.replace("%", "")
-        return int(newData)/100
-    else:
-        try:
-            return float(data)
-        except ValueError:
-            return int(data)
-
 def HTMLToText(HTML):
     return HTML.text.strip()
+
+def cleanData(data):
+    cleanedData = data.strip().replace("\xa0", "")
+
+    if not cleanedData:
+        return None
+
+    if "+" in cleanedData:
+        return int(cleanedData.replace("+", ""))
+    elif "%" in cleanedData:
+        return int(cleanedData.replace("%", ""))/100
+    else:
+        try:
+            return int(cleanedData)
+        except ValueError:
+            return float(cleanedData)
 
 def createMatchToDataDict(links: list, forceRefresh = False):
     #Put data in json files in form of {match Hash: {Team: {Player Stats: }}}
@@ -92,81 +77,65 @@ def createMatchToDataDict(links: list, forceRefresh = False):
     for link in links:
         fullLink = vlrLink + link
 
-        matchPage = BeautifulSoup(getURL(fullLink, matchDataCache), 'lxml')
+        matchPage = BeautifulSoup(getURL(fullLink, matchDataCache, force_refresh = forceRefresh), 'lxml')
         matchName = hashlib.md5(fullLink.encode()).hexdigest()
         HashedMatchNames.append(matchName)
 
+        matchDataDict = {
+            "Full Link": fullLink,
+            "Match Results": {},
+            "Aggregate Stats": {},
+        }
+
         #If no data just continue
         try:
-            oneMapFlag = False
-
             TeamNames = [HTMLToText(team) for team in matchPage.find_all("div", class_="wf-title-med")]
+            matchDataDict["Aggregate Stats"] = {teamName: {} for teamName in TeamNames}
 
             matchMapsHtml = matchPage.find_all("div", class_="vm-stats-gamesnav-item js-map-switch")
             matchMaps = [maps.text.split() for maps in matchMapsHtml]
 
-            mapNametoResult = [HTMLToText(page) for page in matchPage.find_all(class_ = "team-name")]
+            teamNametoResult = [HTMLToText(page) for page in matchPage.find_all(class_ = "team-name")]
             mapResults = [HTMLToText(score) for score in matchPage.find_all(class_ = "score")]
             
-            matchDataDict = {
-                "Match Results": {},
-                "All Maps": {Team: {} for Team in TeamNames}
-            }
-
             #Occurs in BO1s
             if not matchMapsHtml:
                 matchMaps = matchPage.find("div", class_ = "map").find("span").text.strip()
-
-                matchDataDict.update({"Match Results": {
-                                       HTMLToText(mapNametoResult[0]): HTMLToText(mapResults[0]),
-                                       HTMLToText(mapNametoResult[1]): HTMLToText(mapResults[1])
-                                    }})
+                matchDataDict["Match Results"] = {matchMaps: {teamNametoResult[i]: mapResults[i] for i in range(len(teamNametoResult))}}
             else:
-                matchDataDict["Match Results"] = {mapNametoResult[i]: mapResults[i] for i in range(len(mapNametoResult))}
+                matchDataDict["Match Results"] = {Map[1]: {teamNametoResult[i]: mapResults[i] for i in range(len(teamNametoResult))} for Map in matchMaps}
 
-                for i, Map in enumerate(matchMaps):
-                    start = i * 2
-                    end = start + 2
-
-                    matchDataDict["Match Results"][Map[1]] = {
-                        team: result
-                        for team, result in zip(
-                            mapNametoResult[start:end],
-                            mapResults[start:end]
-                        )
-                    }
-
-            matchDataDict.update({"Match Link": fullLink})
-
-            matchTableData = matchPage.find_all("table", class_ = "vm-stats-game mod-active")
+            matchTableData = matchPage.find("div", class_ = "vm-stats-game mod-active").find_all("tbody")
 
         except AttributeError:
             continue
 
         for i, table in enumerate(matchTableData):
-            currentTable = tableToNumpy(table)
+            playerList = table.find_all("tr")
+            aggregateStats = "Aggregate Stats"
 
-            currentMap = "All Maps"
-
-            for player in currentTable:
+            for player in playerList:
                 if not player:
                     continue
-                
+
                 Team = TeamNames[0] if i % 2 == 0 else TeamNames[1]
 
-                name = player[0].replace("\n", "")
-                R = CleanData(player[2])
-                ACS = CleanData(player[3])
-                K = CleanData(player[4])
-                D = CleanData(player[5])
-                A = CleanData(player[6])
-                deltaKD = CleanData(player[7])
-                KAST = CleanData(player[8])
-                ADR = CleanData(player[9])
-                HS_pct = CleanData(player[10])
-                FK = CleanData(player[11])
-                FD = CleanData(player[12])
-                deltaFKFD = CleanData(player[13])
+                playerData = [data.find("span", class_ = "mod-both") for data in player.find_all("td")]
+                noFalsyData = [data.text for data in playerData if data]
+
+                name = normalizePlayer(player.find("td", class_ = "mod-player").text.strip())
+                R = cleanData(noFalsyData[0])
+                ACS = cleanData(noFalsyData[1])
+                K = cleanData(noFalsyData[2])
+                D = cleanData(noFalsyData[3])
+                A = cleanData(noFalsyData[4])
+                deltaKD = cleanData(noFalsyData[5])
+                KAST = cleanData(noFalsyData[6])
+                ADR = cleanData(noFalsyData[7])
+                HS_pct = cleanData(noFalsyData[8])
+                FK = cleanData(noFalsyData[9])
+                FD = cleanData(noFalsyData[10])
+                deltaFKFD = cleanData(noFalsyData[11])
 
                 PlayerObject = {
                     "Name": name,
@@ -184,8 +153,8 @@ def createMatchToDataDict(links: list, forceRefresh = False):
                     "delta FK FD": deltaFKFD
                 }
 
-                if PlayerObject["Name"] not in matchDataDict[currentMap][Team]:
-                    matchDataDict[currentMap][Team][PlayerObject["Name"]] = PlayerObject
+                if PlayerObject["Name"] not in matchDataDict[aggregateStats][Team]:
+                    matchDataDict[aggregateStats][Team][PlayerObject["Name"]] = PlayerObject
 
         filePath = os.path.join(matchDataJsonCache, matchName)
         with open(f"{filePath}.json", 'w', encoding='utf-8') as f:
