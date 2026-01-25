@@ -36,11 +36,11 @@ def getURL(url, cache, force_refresh = False):
     return contents
 
 #Get all matches from page 1 to numPages
-def getHistoryLinks(startPage, endPages, forceRefresh: bool):
+def getHistoryLinks(startPage, endPages, forceRefresh: bool, inputURL):
     links = set()
 
     for page in range(startPage, endPages):
-        soup = BeautifulSoup(getURL(f"https://www.vlr.gg/matches/results/?page={page}", matchPageCache, force_refresh=forceRefresh), 'lxml')
+        soup = BeautifulSoup(getURL(f"{inputURL}{page}", matchPageCache, force_refresh=forceRefresh), 'lxml')
         matches = soup.find_all('a', href=True)        
 
         for match in matches:
@@ -163,19 +163,3 @@ def createMatchToDataDict(links: list, forceRefresh = False):
     with open("Hashes.csv", 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerows([[h] for h in HashedMatchNames])
-
-def main():
-    forceRefesh = True
-    unHashedMatchNames = getHistoryLinks(1, 5, forceRefresh = forceRefesh)
-    createMatchToDataDict(unHashedMatchNames, forceRefresh = forceRefesh)
-
-if __name__ == "__main__":
-    print = pprint.pprint
-    start = time.time()
-    os.makedirs(matchPageCache, exist_ok=True)
-    os.makedirs(matchDataCache, exist_ok=True)
-    os.makedirs(matchDataJsonCache, exist_ok=True)
-    main()
-
-    end = time.time()
-    print(f"{end - start}s")

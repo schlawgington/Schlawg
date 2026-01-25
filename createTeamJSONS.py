@@ -60,16 +60,16 @@ def createTeamJsons(Hashes: list):
                 for player, stats in Shorthand.items():
                     player = normalizePlayer(player)
 
-                    if player not in teamDict:
-                        teamDict[player] = stats
+                    if player not in teamDict["Players"]:
+                        teamDict["Players"][player] = stats
                         continue
 
                     if player == "Match Counter" or player == "Round Counter" or player == "Processed Matches" or player in MapList:
                         continue
 
-                    for stat in teamDict[player].keys():
-                        if not teamDict[player][stat]:
-                            teamDict[player][stat] = Shorthand[player][stat]
+                    for stat in teamDict["Players"][player].keys():
+                        if not teamDict["Players"][player][stat]:
+                            teamDict["Players"][player][stat] = Shorthand[player][stat]
                             continue
 
                         if not Shorthand[player][stat]:
@@ -77,16 +77,16 @@ def createTeamJsons(Hashes: list):
                         
                         # Accumulate Kills, Deaths, and Assists and average all other stats
                         if stat == "R" or stat == "ACS" or stat == "KAST" or stat == "ADR" or stat == "HS%" or stat == "delta FK FD" or stat == "delta KD":
-                            teamDict[player][stat] = ((teamDict[player][stat] * teamDict["Match Counter"]) + Shorthand[player][stat]) / (teamDict["Match Counter"] + 1)
+                            teamDict["Players"][player][stat] = ((teamDict["Players"][player][stat] * teamDict["Match Counter"]) + Shorthand[player][stat]) / (teamDict["Match Counter"] + 1)
                         elif stat == "K" or stat == "D" or stat == "A" or stat == "FK" or stat == "FD":
-                            teamDict[player][stat] += Shorthand[player][stat]
+                            teamDict["Players"][player][stat] += Shorthand[player][stat]
                         else:
                             continue
             else:
                 playerList = list(matchData["Aggregate Stats"][teamName].keys())
 
                 # JSON object construction
-                teamDict = {
+                teamDict = {"Players": {
                     player: {
                     "R": Shorthand[player]["R"],
                     "ACS": Shorthand[player]["ACS"],
@@ -100,7 +100,7 @@ def createTeamJsons(Hashes: list):
                     "FK": Shorthand[player]["FK"],
                     "FD": Shorthand[player]["FD"],
                     "delta FK FD": Shorthand[player]["delta FK FD"]
-                } for player in playerList}
+                } for player in playerList}}
 
                 teamDict.update({Map: {
                     "Win": 0,
@@ -140,12 +140,3 @@ def createTeamJsons(Hashes: list):
 
             with open(filePath, 'w', encoding='utf-8') as dumpFile:
                 json.dump(teamDict, dumpFile, indent=4)
-
-if __name__ == "__main__":
-    os.makedirs(TeamDataJson, exist_ok=True)
-    print = pprint.pprint
-    start = time.time()
-    matchHashes = getmatchHashes()
-    createTeamJsons(matchHashes)
-    end = time.time()
-    print(f"{end - start}s")
