@@ -3,6 +3,9 @@ schedule
 Match Data
 Match Data JSON
 Match Results Pages
+Match Schedule Cache
+Match Schedule JSON Cache
+Team Data JSON
 *.html
 *.json
 *.csv
