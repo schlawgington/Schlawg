@@ -1,0 +1,1 @@
+Simple python scraper that scrapes match data and upcoming matches from vlr.gg and then uses logistic regression to predict match outcomes. To use, first run main.py, directories for caching data will be created and filled. After input a match link in logisticRegression.py and run.
